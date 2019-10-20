@@ -5,7 +5,7 @@ public abstract class Snack {
   String name="";
   int code=0;
 
-  double getPrice(){
+  public double getPrice(){
     return this.price;
   }
 

@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import snacks.BBQChips;
 import snacks.Jellybeans;
@@ -14,27 +15,32 @@ public class VendingMachine {
   private Transaction transaction;
   private ArrayList<Snack> snacks;
 
+  public VendingMachine(){
+    transaction=new Transaction();
+    snacks=new ArrayList<>();
+  }
+
   public void buy(String input){
-    if(isNumeric(input)){
-      switch(Integer.parseInt(input)){
-        case 1:
-          snacks.add(new BBQChips());
-        case 2:
-          snacks.add(new Jellybeans());
-        case 3:
-          snacks.add(new Juice());
-        case 4:
-          snacks.add(new Lollies());
-        case 5:
-          snacks.add(new Mars());
-        case 6:
-          snacks.add(new OriginalChips());
-        case 7:
-          snacks.add(new Sneakers());
-        case 8:
-          snacks.add(new SourWorms());
-        case 9:
-          snacks.add(new Water());
+    if (isNumeric(input)) {
+      int i = Integer.parseInt(input);
+      if (i == 1) {
+        snacks.add(new BBQChips());
+      } else if (i == 2) {
+        snacks.add(new Jellybeans());
+      } else if (i == 3) {
+        snacks.add(new Juice());
+      } else if (i == 4) {
+        snacks.add(new Lollies());
+      } else if (i == 5) {
+        snacks.add(new Mars());
+      } else if (i == 6) {
+        snacks.add(new OriginalChips());
+      } else if (i == 7) {
+        snacks.add(new Sneakers());
+      } else if (i == 8) {
+        snacks.add(new SourWorms());
+      } else if (i == 9) {
+        snacks.add(new Water());
       }
     }
     else{
@@ -66,6 +72,14 @@ public class VendingMachine {
       if (!Character.isDigit(i)) return false;
     }
     return true;
+  }
+
+  public double getTotalPrice(){
+    double total=0.0;
+    for(Snack i:snacks){
+      total+=i.getPrice();
+    }
+    return total;
   }
 
 

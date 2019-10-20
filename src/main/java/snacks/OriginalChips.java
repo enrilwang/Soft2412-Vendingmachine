@@ -1,8 +1,9 @@
 package snacks;
 
 public class OriginalChips extends Snack {
-  double price=3.2;
-  String name="";
-  int code=6;
-
+  public OriginalChips(){
+    price=3.2;
+    name="OriginalChips";
+    code=6;
+  }
 }

@@ -1,7 +1,9 @@
 package snacks;
 
 public class BBQChips extends Snack {
-  double price=2.5;
-  String name="BBQChips";
-  int code=1;
+  public BBQChips(){
+    price=2.5;
+    name="BBQChips";
+    code=1;
+  }
 }
