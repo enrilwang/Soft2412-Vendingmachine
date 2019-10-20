@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae4b06f6-c1c0-4eb5-87a7-5820740dd20b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/BBQChips.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/BBQChips.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Jellybeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Jellybeans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Juice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Juice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Lollies.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Lollies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Mars.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Mars.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/OriginalChips.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/OriginalChips.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Snack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Snack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Sneakers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Sneakers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/SourWorms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/SourWorms.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Water.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Water.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/BBQChips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/BBQChips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Jellybeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Jellybeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Juice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Lollies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Lollies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Mars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Mars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/OriginalChips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/OriginalChips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Snack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Snack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Sneakers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Sneakers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/SourWorms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/SourWorms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Water.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -48,21 +24,15 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view />
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Sneakers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/snacks/SourWorms.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            <state relative-caret-position="565">
+              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -103,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Juice.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -113,6 +83,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
               <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Snack.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -133,10 +112,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/VendingMachine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="416">
+              <caret line="125" column="26" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2178#2179#0" expanded="true" />
+                <element signature="e#2211#2212#0" expanded="true" />
+                <element signature="e#4430#4431#0" expanded="true" />
+                <element signature="e#4444#4445#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/main/java/snacks/Original.java" />
         <option value="$PROJECT_DIR$/src/main/java/snacks/BBQCHips.java" />
         <option value="$PROJECT_DIR$/src/main/java/Staff.java" />
-        <option value="$PROJECT_DIR$/src/main/java/snacks/Snack.java" />
         <option value="$PROJECT_DIR$/src/main/java/snacks/BBQChips.java" />
         <option value="$PROJECT_DIR$/src/main/java/snacks/Jellybeans.java" />
         <option value="$PROJECT_DIR$/src/main/java/snacks/Juice.java" />
@@ -208,6 +190,7 @@
         <option value="$PROJECT_DIR$/src/main/java/snacks/Water.java" />
         <option value="$PROJECT_DIR$/src/main/java/Start.java" />
         <option value="$PROJECT_DIR$/src/main/java/Menu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snacks/Snack.java" />
         <option value="$PROJECT_DIR$/src/main/java/VendingMachine.java" />
       </list>
     </option>
@@ -369,6 +352,53 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="sss" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="sss" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Start" />
@@ -389,12 +419,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571552831105</updated>
-      <workItem from="1571552832493" duration="7963000" />
+      <workItem from="1571552832493" duration="10933000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7963000" />
+    <option name="totallyTimeSpent" value="10933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
@@ -405,7 +435,7 @@
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24975026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24975026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" weight="0.32997987" />
       <window_info anchor="bottom" id="Terminal" />
@@ -416,7 +446,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32997987" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.277666" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.277666" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993964" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -494,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Snack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Sneakers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -529,17 +552,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/snacks/BBQChips.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Juice.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -561,19 +577,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snacks/BBQChips.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snacks/Snack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        <state relative-caret-position="565">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/VendingMachine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        <state relative-caret-position="416">
+          <caret line="125" column="26" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2178#2179#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#4430#4431#0" expanded="true" />
+            <element signature="e#4444#4445#0" expanded="true" />
           </folding>
         </state>
       </provider>

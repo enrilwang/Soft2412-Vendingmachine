@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map.Entry;
 import snacks.BBQChips;
 import snacks.Jellybeans;
 import snacks.Juice;
@@ -13,56 +15,77 @@ import snacks.Water;
 
 public class VendingMachine {
   private Transaction transaction;
-  private ArrayList<Snack> snacks;
+  private ArrayList<Snack> purchaseList;
+  private HashMap<String, Integer> stock=new HashMap<>();
 
   public VendingMachine(){
     transaction=new Transaction();
-    snacks=new ArrayList<>();
+    purchaseList=new ArrayList<>();
+    fill();
   }
 
+  //puts item in purchase list, quantity of item - 1, but have to account for cancels.
   public void buy(String input){
     if (isNumeric(input)) {
       int i = Integer.parseInt(input);
       if (i == 1) {
-        snacks.add(new BBQChips());
+        purchaseList.add(new BBQChips());
+        stock.put("bbqchips", stock.get("bbqchips")-1);
       } else if (i == 2) {
-        snacks.add(new Jellybeans());
+        purchaseList.add(new Jellybeans());
+        stock.put("jellybeans", stock.get("jellybeans")-1);
       } else if (i == 3) {
-        snacks.add(new Juice());
+        purchaseList.add(new Juice());
+        stock.put("juice", stock.get("juice")-1);
       } else if (i == 4) {
-        snacks.add(new Lollies());
+        purchaseList.add(new Lollies());
+        stock.put("lollies", stock.get("lollies")-1);
       } else if (i == 5) {
-        snacks.add(new Mars());
+        purchaseList.add(new Mars());
+        stock.put("mars", stock.get("mars")-1);
       } else if (i == 6) {
-        snacks.add(new OriginalChips());
+        purchaseList.add(new OriginalChips());
+        stock.put("originalchips", stock.get("originalchips")-1);
       } else if (i == 7) {
-        snacks.add(new Sneakers());
+        purchaseList.add(new Sneakers());
+        stock.put("sneakers", stock.get("sneakers")-1);
       } else if (i == 8) {
-        snacks.add(new SourWorms());
+        purchaseList.add(new SourWorms());
+        stock.put("sourworms", stock.get("sourworms")-1);
       } else if (i == 9) {
-        snacks.add(new Water());
+        purchaseList.add(new Water());
+        stock.put("water", stock.get("water")-1);
       }
     }
     else{
       String s=input.toLowerCase();
       if(s.equals("bbqchips")){
-        snacks.add(new BBQChips());
+        purchaseList.add(new BBQChips());
+        stock.put("bbqchips", stock.get("bbqchips")-1);
       }else if(s.equals("jellybeans")){
-        snacks.add(new Jellybeans());
+        purchaseList.add(new Jellybeans());
+        stock.put("jellybeans", stock.get("jellybeans")-1);
       }else if(s.equals("juice")){
-        snacks.add(new Juice());
+        purchaseList.add(new Juice());
+        stock.put("juice", stock.get("juice")-1);
       }else if(s.equals("lollies")){
-        snacks.add(new Lollies());
+        purchaseList.add(new Lollies());
+        stock.put("lollies", stock.get("lollies")-1);
       }else if(s.equals("mars")){
-        snacks.add(new Mars());
+        purchaseList.add(new Mars());
+        stock.put("mars", stock.get("mars")-1);
       }else if(s.equals("originalchips")){
-        snacks.add(new OriginalChips());
+        purchaseList.add(new OriginalChips());
+        stock.put("originalchips", stock.get("originalchips")-1);
       }else if(s.equals("sneakers")){
-        snacks.add(new Sneakers());
+        purchaseList.add(new Sneakers());
+        stock.put("sneakers", stock.get("sneakers")-1);
       }else if(s.equals("sourworms")){
-        snacks.add(new SourWorms());
+        purchaseList.add(new SourWorms());
+        stock.put("sourworms", stock.get("sourworms")-1);
       }else if(s.equals("water")){
-        snacks.add(new Water());
+        purchaseList.add(new Water());
+        stock.put("water", stock.get("water")-1);
       }
     }
   }
@@ -76,11 +99,40 @@ public class VendingMachine {
 
   public double getTotalPrice(){
     double total=0.0;
-    for(Snack i:snacks){
+    for(Snack i:purchaseList){
       total+=i.getPrice();
     }
     return total;
   }
+
+  ///resets the purchase list between customers.
+  public void resetPurchase(){
+    purchaseList=new ArrayList<>();
+  }
+
+  ///fills the quantity of snacks at 10 per item, vending machine starts off filled.
+  public void fill(){
+    stock.put("BBQChips", 10);
+    stock.put("Jellybeans", 10);
+    stock.put("Juice", 10);
+    stock.put("Lollies", 10);
+    stock.put("Mars", 10);
+    stock.put("OriginalChips", 10);
+    stock.put("Sneakers", 10);
+    stock.put("Sourworms", 10);
+    stock.put("Water", 10);
+  }
+
+  //shows the amount of each item left in vending machine.
+  public void showStock(){
+    for(Entry<String, Integer> i:stock.entrySet()){
+      String s=i.getKey();
+      int quantity=i.getValue();
+      System.out.println("Product: "+s+"\t\t\tquantity: "+quantity);
+    }
+  }
+
+
 
 
 }
