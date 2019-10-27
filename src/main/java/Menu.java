@@ -72,7 +72,7 @@ public class Menu {
       //Moves on to the next customer if exit is typed.
 //      String input = scan.nextLine();
 //      if(input.toLowerCase().equals("exit")){
-      System.out.println("\n\nNext customer.");
+        System.out.println("\n\nNext customer.");
 //        continue;
 //      }
     }
