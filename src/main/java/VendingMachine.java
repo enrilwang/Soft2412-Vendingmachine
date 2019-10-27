@@ -24,7 +24,7 @@ public class VendingMachine {
     fill();
   }
 
-  //puts item in purchase list, quantity of item - 1, but have to account for cancels. 
+  //puts item in purchase list, quantity of item - 1, but have to account for cancels.
   public void buy(String input){
     if (isNumeric(input)) {
       int i = Integer.parseInt(input);
@@ -132,7 +132,7 @@ public class VendingMachine {
     }
   }
 
-
-
-
+  public HashMap<String, Integer> getStock() {
+    return stock;
+  }
 }
