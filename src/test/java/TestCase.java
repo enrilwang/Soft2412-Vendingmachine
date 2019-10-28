@@ -188,6 +188,37 @@ public class TestCase {
         Assert.assertEquals(4.7,test.getTotalPrice(),0.01);
 
     }
+    @Test
+    public void TestSuccessfulBuy(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        test.buy("1",1);
+        test.successfulBuy();
+        test.showStock();
+        Assert.assertEquals("Product: Water\t\t\tquantity: 10\n" +
+                "Product: Mars\t\t\tquantity: 10\n" +
+                "Product: Sourworms\t\t\tquantity: 10\n" +
+                "Product: Sneakers\t\t\tquantity: 10\n" +
+                "Product: BBQChips\t\t\tquantity: 9\n" +
+                "Product: OriginalChips\t\t\tquantity: 10\n" +
+                "Product: Juice\t\t\tquantity: 10\n" +
+                "Product: Jellybeans\t\t\tquantity: 10\n" +
+                "Product: Lollies\t\t\tquantity: 10\n", out.toString());
+
+    }
+    @Test
+    public void TestPrintPurchaseList(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        test.buy("1",1);
+        test.printPurchaseList();
+        Assert.assertEquals("Purchase list:\n" +
+                "                                BBQChips                    1 \n" ,out.toString());
+
+
+    }
 //    @Test
 //    public void TestStart(){
 //        ByteArrayInputStream in = new ByteArrayInputStream("1\n1\n1\n".getBytes());
