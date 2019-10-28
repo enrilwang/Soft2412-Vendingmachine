@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestCase" tests="9" skipped="0" failures="0" errors="0" timestamp="2019-10-28T08:29:09" hostname="PennydeMacBook-Air-2.local" time="0.03">
+  <properties/>
+  <testcase name="TestSetAndGetSnakePrice" classname="TestCase" time="0.002"/>
+  <testcase name="TestGetStock" classname="TestCase" time="0.016"/>
+  <testcase name="TestSnacks" classname="TestCase" time="0.007"/>
+  <testcase name="TestShowStock" classname="TestCase" time="0.001"/>
+  <testcase name="TestCheckIsNumeric" classname="TestCase" time="0.001"/>
+  <testcase name="TestBuy" classname="TestCase" time="0.0"/>
+  <testcase name="TestGetTotalPrice" classname="TestCase" time="0.0"/>
+  <testcase name="TestSetAndGetSnakeCode" classname="TestCase" time="0.001"/>
+  <testcase name="TestSetAndGetSnakeName" classname="TestCase" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

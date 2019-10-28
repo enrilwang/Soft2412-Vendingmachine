@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'jacoco'
 }
 
 group 'ss'
@@ -15,3 +16,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
+jacoco {
+    toolVersion = "0.8.4" //jacoco version
+    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
+}

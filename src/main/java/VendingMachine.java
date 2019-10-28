@@ -59,7 +59,7 @@ public class VendingMachine {
     }
     else{
       String s=input.toLowerCase();
-      if(s.equals("BBQChips")){
+      if(s.equals("bbqchips")){
         purchaseList.add(new BBQChips());
         stock.put("BBQChips", stock.get("BBQChips")-1);
       }else if(s.equals("jellybeans")){
@@ -76,7 +76,7 @@ public class VendingMachine {
         stock.put("Mars", stock.get("Mars")-1);
       }else if(s.equals("originalchips")){
         purchaseList.add(new OriginalChips());
-        stock.put("Originalchips", stock.get("Originalchips")-1);
+        stock.put("OriginalChips", stock.get("OriginalChips")-1);
       }else if(s.equals("sneakers")){
         purchaseList.add(new Sneakers());
         stock.put("Sneakers", stock.get("Sneakers")-1);

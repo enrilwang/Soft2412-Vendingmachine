@@ -10,7 +10,7 @@ public class Menu {
     start();
   }
 
-  private void start(){
+  public void start(){
     Scanner scan = new Scanner(System.in);
     while(true){
       System.out.printf("%40s %20s %20s,%n","BBQChips - Name: BBQChips", "Code:1", "Price:$2.5");
