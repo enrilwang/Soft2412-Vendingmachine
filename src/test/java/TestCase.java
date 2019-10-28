@@ -252,36 +252,6 @@ public class TestCase {
 //    }
     
     
-    //    @Test
-//    public void TestStart(){
-//        ByteArrayInputStream in = new ByteArrayInputStream("1\n1\n1\n".getBytes());
-//        System.setIn(in);
-//        ByteArrayOutputStream out = new ByteArrayOutputStream();
-//        System.setOut(new PrintStream(out));
-//        Menu test = new Menu();
-//        test.start();
-//        Assert.assertEquals(
-//                "BBQChips - Name: BBQChips               Code:1           Price:$2.5,\n"
-//                + "Jellybeans - Name: Jellybeans               Code:2           Price:$2.2,\n"
-//                +"Juice - Name: Juice               Code:3           Price:$3.2,\n"
-//                +"Lollies - Name: Lollies               Code:4           Price:$1.5,\n"
-//                +"Mars - Name: Mars               Code:5           Price:$3.0,\n"
-//                +"OriginalChips - Name: OriginalChips               Code:6           Price:$3.2,\n"
-//                +"Sneakers - Name: Sneakers               Code:7           Price:$3.5,\n"
-//                +"SourWorms - Name: SourWorms               Code:8           Price:$2.0,\n"
-//                +"Water - Name: Water               Code:9           Price:$4.5,\n"
-//                +"\n"
-//                +"At any point during the purchase, type cancel to cancel transaction.\n"
-//                +"\n"
-//                +"Please input the product name or code of snack.\n"
-//                +"Please input the quantity you wish to purchase.\n"
-//                +"Do you want to add another item? Type 0 for yes, 1 for no\n"
-//                +"The total price is $2.50\n"
-//                +"Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)"
-//                +"You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.\n" + "To cancel transaction, type in cancel."
-//                ,
-//
-//                out.toString());
-//    }
+    
 
 }
