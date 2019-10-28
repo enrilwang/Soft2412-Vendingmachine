@@ -144,35 +144,38 @@ public class TestCase {
     @Test
     public void TestBuy() {
         VendingMachine test = new VendingMachine();
-        test.buy("1");
-        test.buy("2");
-        test.buy("3");
-        test.buy("4");
-        test.buy("5");
-        test.buy("6");
-        test.buy("7");
-        test.buy("8");
-        test.buy("9");
-        test.buy("BBQChips");
-        test.buy("Jellybeans");
-        test.buy("Juice");
-        test.buy("Lollies");
-        test.buy("Mars");
-        test.buy("OriginalChips");
-        test.buy("Sneakers");
-        test.buy("Sourworms");
-        test.buy("Water");
-        Map<String, Integer> map = new HashMap<>();
-        map.put("BBQChips", 8);
-        map.put("Jellybeans", 8);
-        map.put("Juice", 8);
-        map.put("Lollies", 8);
-        map.put("Mars", 8);
-        map.put("OriginalChips",8);
-        map.put("Sneakers", 8);
-        map.put("Sourworms", 8);
-        map.put("Water", 8);
-        assertThat(test.getStock(), is(map));
+        test.buy("1",2 );
+        test.buy("2",1 );
+        test.buy("3",1 );
+        test.buy("4",1 );
+        test.buy("5",1 );
+        test.buy("6",1 );
+        test.buy("7",1 );
+        test.buy("8",1 );
+        test.buy("9",1 );
+        test.buy("BBQChips",1 );
+        test.buy("Jellybeans",1 );
+        test.buy("Juice",1 );
+        test.buy("Lollies",1 );
+        test.buy("Mars",1 );
+        test.buy("OriginalChips",1 );
+        test.buy("Sneakers",1 );
+        test.buy("Sourworms",1 );
+        test.buy("Water",1 );
+//        Map<String, Integer> map = new HashMap<>();
+//        map.put("BBQChips", 2);
+//        map.put("Jellybeans", 2);
+//        map.put("Juice", 2);
+//        map.put("Lollies", 2);
+//        map.put("Mars", 2);
+//        map.put("OriginalChips",2);
+//        map.put("Sneakers", 2);
+//        map.put("Sourworms", 2);
+//        map.put("Water", 2);
+//        assertThat(test.getPurchaseList(), is(map));
+        for(Snack snack:test.getPurchaseList().keySet()){
+            Assert.assertEquals(test.getPurchaseList().get(snack), 2, 1);
+        }
 
 
     }
@@ -180,8 +183,8 @@ public class TestCase {
     @Test
     public void TestGetTotalPrice(){
         VendingMachine test = new VendingMachine();
-        test.buy("1");
-        test.buy("2");
+        test.buy("1", 1);
+        test.buy("2", 1);
         Assert.assertEquals(4.7,test.getTotalPrice(),0.01);
 
     }

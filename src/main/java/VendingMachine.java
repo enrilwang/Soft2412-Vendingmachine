@@ -216,4 +216,12 @@ public class VendingMachine {
       System.out.printf("%40s %20s %n", name, Integer.toString(amount));
     }
   }
+
+  public HashMap<Snack, Integer> getPurchaseList() {
+    return purchaseList;
+  }
+
+  public void setPurchaseList(HashMap<Snack, Integer> purchaseList) {
+    this.purchaseList = purchaseList;
+  }
 }
