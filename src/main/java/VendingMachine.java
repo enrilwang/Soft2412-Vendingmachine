@@ -204,7 +204,7 @@ public class VendingMachine {
   }
 
   public HashMap<String, Integer> getStock() {
-    return stock;
+    return this.stock;
   }
 
 
@@ -218,7 +218,7 @@ public class VendingMachine {
   }
 
   public HashMap<Snack, Integer> getPurchaseList() {
-    return purchaseList;
+    return this.purchaseList;
   }
 
   public void setPurchaseList(HashMap<Snack, Integer> purchaseList) {
