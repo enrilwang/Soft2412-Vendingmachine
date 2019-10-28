@@ -36,7 +36,10 @@ public class Menu {
         System.out.println("Please input the quantity you wish to purchase.");
         String quantity = scan.nextLine();
         cancelCheck(quantity);
-        vendingMachine.buy(input, Integer.parseInt(quantity));
+        if(!vendingMachine.buy(input, Integer.parseInt(quantity))){
+          System.out.println("\nPlease input the product name or code of snack you wish to purchase.");
+          continue;
+        }
         System.out.println("Do you want to add another item? Type 0 for yes, 1 for no");
         String s = scan.nextLine();
         cancelCheck(s);

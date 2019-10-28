@@ -48,44 +48,54 @@ public class VendingMachine {
   }
 
   // puts item in purchase list, not yet confirmed.
-  public void buy(String input, int quantity) {
+  // if no stock available, then return false.
+  public boolean buy(String input, int quantity) {
     if (isNumeric(input)) {
       int i = Integer.parseInt(input);
       if (i == 1) {
         if (stockAvailable("BBQChips", quantity)) {
           purchaseList.put(new BBQChips(), quantity);
+          return true;
         }
       } else if (i == 2) {
         if (stockAvailable("Jellybeans", quantity)) {
           purchaseList.put(new Jellybeans(), quantity);
+          return true;
         }
       } else if (i == 3) {
         if (stockAvailable("Juice", quantity)) {
           purchaseList.put(new Juice(), quantity);
+          return true;
         }
       } else if (i == 4) {
         if (stockAvailable("Lollies", quantity)) {
           purchaseList.put(new Lollies(), quantity);
+          return true;
         }
       } else if (i == 5) {
         if (stockAvailable("Mars", quantity)) {
           purchaseList.put(new Mars(), quantity);
+          return true;
         }
       } else if (i == 6) {
         if (stockAvailable("OriginalChips", quantity)) {
           purchaseList.put(new OriginalChips(), quantity);
+          return true;
         }
       } else if (i == 7) {
         if (stockAvailable("Sneakers", quantity)) {
           purchaseList.put(new Sneakers(), quantity);
+          return true;
         }
       } else if (i == 8) {
         if (stockAvailable("SourWorms", quantity)) {
           purchaseList.put(new SourWorms(), quantity);
+          return true;
         }
       } else if (i == 9) {
         if (stockAvailable("Water", quantity)) {
           purchaseList.put(new Water(), quantity);
+          return true;
         }
       }
     } else {
@@ -93,41 +103,51 @@ public class VendingMachine {
       if (s.equals("bbqchips")) {
         if (stockAvailable("BBQChips", quantity)) {
           purchaseList.put(new BBQChips(), quantity);
+          return true;
         }
       } else if (s.equals("jellybeans")) {
         if (stockAvailable("Jellybeans", quantity)) {
           purchaseList.put(new Jellybeans(), quantity);
+          return true;
         }
       } else if (s.equals("juice")) {
         if (stockAvailable("Juice", quantity)) {
           purchaseList.put(new Juice(), quantity);
+          return true;
         }
       } else if (s.equals("lollies")) {
         if (stockAvailable("Lollies", quantity)) {
           purchaseList.put(new Lollies(), quantity);
+          return true;
         }
       } else if (s.equals("mars")) {
         if (stockAvailable("Mars", quantity)) {
           purchaseList.put(new Mars(), quantity);
+          return true;
         }
       } else if (s.equals("originalchips")) {
         if (stockAvailable("OriginalChips", quantity)) {
           purchaseList.put(new OriginalChips(), quantity);
+          return true;
         }
       } else if (s.equals("sneakers")) {
         if (stockAvailable("Sneakers", quantity)) {
           purchaseList.put(new Sneakers(), quantity);
+          return true;
         }
       } else if (s.equals("sourworms")) {
         if (stockAvailable("SourWorms", quantity)) {
           purchaseList.put(new SourWorms(), quantity);
+          return true;
         }
       } else if (s.equals("water")) {
         if (stockAvailable("Water", quantity)) {
           purchaseList.put(new Water(), quantity);
+          return true;
         }
       }
     }
+    return false;
   }
 
   // when purchase is successful, reduce stock by the amount.
