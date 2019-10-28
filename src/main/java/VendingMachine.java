@@ -1,6 +1,6 @@
-
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import snacks.BBQChips;
 import snacks.Jellybeans;
@@ -15,77 +15,128 @@ import snacks.Water;
 
 public class VendingMachine {
   private Transaction transaction;
-  private ArrayList<Snack> purchaseList;
-  private HashMap<String, Integer> stock=new HashMap<>();
+  private HashMap<Snack, Integer> purchaseList;
+  private HashMap<String, Integer> stock = new HashMap<>();
 
-  public VendingMachine(){
-    transaction=new Transaction();
-    purchaseList=new ArrayList<>();
+  public VendingMachine() {
+    transaction = new Transaction();
+    purchaseList = new HashMap<>();
     fill();
   }
 
-  //puts item in purchase list, quantity of item - 1, but have to account for cancels.
-  public void buy(String input){
+  // checks if there is stock available for the item to be purchased.
+  // if the amount of stock after purchase will be negative, then return false.
+  public boolean stockAvailable(String snack, Integer amount) {
+    for (String stockSnack : stock.keySet()) {
+      if (snack.equals(stockSnack)) {
+        if (stock.get(stockSnack) - amount < 0) {
+          System.out.println(
+              "You cannot purchase "
+                  + amount
+                  + " "
+                  + snack
+                  + " because there are only "
+                  + stock.get(stockSnack)
+                  + " "
+                  + snack
+                  + " left in the vending machine.");
+        }
+        return stock.get(stockSnack) - amount >= 0;
+      }
+    }
+    return true;
+  }
+
+  // puts item in purchase list, not yet confirmed.
+  public void buy(String input, int quantity) {
     if (isNumeric(input)) {
       int i = Integer.parseInt(input);
       if (i == 1) {
-        purchaseList.add(new BBQChips());
-        stock.put("BBQChips", stock.get("BBQChips")-1);
+        if (stockAvailable("BBQChips", quantity)) {
+          purchaseList.put(new BBQChips(), quantity);
+        }
       } else if (i == 2) {
-        purchaseList.add(new Jellybeans());
-        stock.put("Jellybeans", stock.get("Jellybeans")-1);
+        if (stockAvailable("Jellybeans", quantity)) {
+          purchaseList.put(new Jellybeans(), quantity);
+        }
       } else if (i == 3) {
-        purchaseList.add(new Juice());
-        stock.put("Juice", stock.get("Juice")-1);
+        if (stockAvailable("Juice", quantity)) {
+          purchaseList.put(new Juice(), quantity);
+        }
       } else if (i == 4) {
-        purchaseList.add(new Lollies());
-        stock.put("Lollies", stock.get("Lollies")-1);
+        if (stockAvailable("Lollies", quantity)) {
+          purchaseList.put(new Lollies(), quantity);
+        }
       } else if (i == 5) {
-        purchaseList.add(new Mars());
-        stock.put("Mars", stock.get("Mars")-1);
+        if (stockAvailable("Mars", quantity)) {
+          purchaseList.put(new Mars(), quantity);
+        }
       } else if (i == 6) {
-        purchaseList.add(new OriginalChips());
-        stock.put("OriginalChips", stock.get("OriginalChips")-1);
+        if (stockAvailable("OriginalChips", quantity)) {
+          purchaseList.put(new OriginalChips(), quantity);
+        }
       } else if (i == 7) {
-        purchaseList.add(new Sneakers());
-        stock.put("Sneakers", stock.get("Sneakers")-1);
+        if (stockAvailable("Sneakers", quantity)) {
+          purchaseList.put(new Sneakers(), quantity);
+        }
       } else if (i == 8) {
-        purchaseList.add(new SourWorms());
-        stock.put("Sourworms", stock.get("Sourworms")-1);
+        if (stockAvailable("SourWorms", quantity)) {
+          purchaseList.put(new SourWorms(), quantity);
+        }
       } else if (i == 9) {
-        purchaseList.add(new Water());
-        stock.put("Water", stock.get("Water")-1);
+        if (stockAvailable("Water", quantity)) {
+          purchaseList.put(new Water(), quantity);
+        }
+      }
+    } else {
+      String s = input.toLowerCase();
+      if (s.equals("bbqchips")) {
+        if (stockAvailable("BBQChips", quantity)) {
+          purchaseList.put(new BBQChips(), quantity);
+        }
+      } else if (s.equals("jellybeans")) {
+        if (stockAvailable("Jellybeans", quantity)) {
+          purchaseList.put(new Jellybeans(), quantity);
+        }
+      } else if (s.equals("juice")) {
+        if (stockAvailable("Juice", quantity)) {
+          purchaseList.put(new Juice(), quantity);
+        }
+      } else if (s.equals("lollies")) {
+        if (stockAvailable("Lollies", quantity)) {
+          purchaseList.put(new Lollies(), quantity);
+        }
+      } else if (s.equals("mars")) {
+        if (stockAvailable("Mars", quantity)) {
+          purchaseList.put(new Mars(), quantity);
+        }
+      } else if (s.equals("originalchips")) {
+        if (stockAvailable("OriginalChips", quantity)) {
+          purchaseList.put(new OriginalChips(), quantity);
+        }
+      } else if (s.equals("sneakers")) {
+        if (stockAvailable("Sneakers", quantity)) {
+          purchaseList.put(new Sneakers(), quantity);
+        }
+      } else if (s.equals("sourworms")) {
+        if (stockAvailable("SourWorms", quantity)) {
+          purchaseList.put(new SourWorms(), quantity);
+        }
+      } else if (s.equals("water")) {
+        if (stockAvailable("Water", quantity)) {
+          purchaseList.put(new Water(), quantity);
+        }
       }
     }
-    else{
-      String s=input.toLowerCase();
-      if(s.equals("bbqchips")){
-        purchaseList.add(new BBQChips());
-        stock.put("BBQChips", stock.get("BBQChips")-1);
-      }else if(s.equals("jellybeans")){
-        purchaseList.add(new Jellybeans());
-        stock.put("Jellybeans", stock.get("Jellybeans")-1);
-      }else if(s.equals("juice")){
-        purchaseList.add(new Juice());
-        stock.put("Juice", stock.get("Juice")-1);
-      }else if(s.equals("lollies")){
-        purchaseList.add(new Lollies());
-        stock.put("Lollies", stock.get("Lollies")-1);
-      }else if(s.equals("mars")){
-        purchaseList.add(new Mars());
-        stock.put("Mars", stock.get("Mars")-1);
-      }else if(s.equals("originalchips")){
-        purchaseList.add(new OriginalChips());
-        stock.put("OriginalChips", stock.get("OriginalChips")-1);
-      }else if(s.equals("sneakers")){
-        purchaseList.add(new Sneakers());
-        stock.put("Sneakers", stock.get("Sneakers")-1);
-      }else if(s.equals("sourworms")){
-        purchaseList.add(new SourWorms());
-        stock.put("Sourworms", stock.get("Sourworms")-1);
-      }else if(s.equals("water")){
-        purchaseList.add(new Water());
-        stock.put("Water", stock.get("Water")-1);
+  }
+
+  // when purchase is successful, reduce stock by the amount.
+  public void successfulBuy() {
+    for (Snack snack : purchaseList.keySet()) {
+      for (String stockSnack : stock.keySet()) {
+        if (snack.getName().equals(stockSnack)) {
+          stock.put(stockSnack, stock.get(stockSnack) - purchaseList.get(snack));
+        }
       }
     }
   }
@@ -97,21 +148,21 @@ public class VendingMachine {
     return true;
   }
 
-  public double getTotalPrice(){
-    double total=0.0;
-    for(Snack i:purchaseList){
-      total+=i.getPrice();
+  public double getTotalPrice() {
+    double total = 0.0;
+    for (Snack i : purchaseList.keySet()) {
+      total += i.getPrice() * purchaseList.get(i);
     }
     return total;
   }
 
-  ///resets the purchase list between customers.
-  public void resetPurchase(){
-    purchaseList=new ArrayList<>();
+  /// resets the purchase list between customers.
+  public void resetPurchase() {
+    purchaseList = new HashMap<>();
   }
 
-  ///fills the quantity of snacks at 10 per item, vending machine starts off filled.
-  public void fill(){
+  /// fills the quantity of snacks at 10 per item, vending machine starts off filled.
+  public void fill() {
     stock.put("BBQChips", 10);
     stock.put("Jellybeans", 10);
     stock.put("Juice", 10);
@@ -123,16 +174,26 @@ public class VendingMachine {
     stock.put("Water", 10);
   }
 
-  //shows the amount of each item left in vending machine.
-  public void showStock(){
-    for(Entry<String, Integer> i:stock.entrySet()){
-      String s=i.getKey();
-      int quantity=i.getValue();
-      System.out.println("Product: "+s+"\t\t\tquantity: "+quantity);
+  // shows the amount of each item left in vending machine.
+  public void showStock() {
+    for (Entry<String, Integer> i : stock.entrySet()) {
+      String s = i.getKey();
+      int quantity = i.getValue();
+      System.out.println("Product: " + s + "\t\t\tquantity: " + quantity);
     }
   }
 
   public HashMap<String, Integer> getStock() {
     return stock;
+  }
+
+
+  public void printPurchaseList() {
+    System.out.println("Purchase list:");
+    for (Map.Entry<Snack, Integer> set : purchaseList.entrySet()) {
+      String name = set.getKey().getName();
+      int amount = set.getValue();
+      System.out.printf("%40s %20s %n", name, Integer.toString(amount));
+    }
   }
 }
