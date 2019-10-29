@@ -208,6 +208,7 @@ public class VendingMachine {
   }
 
 
+  //prints the purchase list to menu.
   public void printPurchaseList() {
     System.out.println("Purchase list:");
     for (Map.Entry<Snack, Integer> set : purchaseList.entrySet()) {
