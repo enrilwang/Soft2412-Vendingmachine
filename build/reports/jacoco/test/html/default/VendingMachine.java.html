@@ -152,14 +152,14 @@ public class VendingMachine {
 
   // when purchase is successful, reduce stock by the amount.
   public void successfulBuy() {
-<span class="fc bfc" id="L155" title="All 2 branches covered.">    for (Snack snack : purchaseList.keySet()) {</span>
-<span class="fc bfc" id="L156" title="All 2 branches covered.">      for (String stockSnack : stock.keySet()) {</span>
-<span class="fc bfc" id="L157" title="All 2 branches covered.">        if (snack.getName().equals(stockSnack)) {</span>
-<span class="fc" id="L158">          stock.put(stockSnack, stock.get(stockSnack) - purchaseList.get(snack));</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">    for (Snack snack : purchaseList.keySet()) {</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">      for (String stockSnack : stock.keySet()) {</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">        if (snack.getName().equals(stockSnack)) {</span>
+<span class="nc" id="L158">          stock.put(stockSnack, stock.get(stockSnack) - purchaseList.get(snack));</span>
         }
-<span class="fc" id="L160">      }</span>
-<span class="fc" id="L161">    }</span>
-<span class="fc" id="L162">  }</span>
+<span class="nc" id="L160">      }</span>
+<span class="nc" id="L161">    }</span>
+<span class="nc" id="L162">  }</span>
 
   public boolean isNumeric(String input) {
 <span class="fc bfc" id="L165" title="All 2 branches covered.">    for (char i : input.toCharArray()) {</span>
@@ -196,12 +196,12 @@ public class VendingMachine {
 
   // shows the amount of each item left in vending machine.
   public void showStock() {
-<span class="fc bfc" id="L199" title="All 2 branches covered.">    for (Entry&lt;String, Integer&gt; i : stock.entrySet()) {</span>
-<span class="fc" id="L200">      String s = i.getKey();</span>
-<span class="fc" id="L201">      int quantity = i.getValue();</span>
-<span class="fc" id="L202">      System.out.println(&quot;Product: &quot; + s + &quot;\t\t\tquantity: &quot; + quantity);</span>
-<span class="fc" id="L203">    }</span>
-<span class="fc" id="L204">  }</span>
+<span class="nc bnc" id="L199" title="All 2 branches missed.">    for (Entry&lt;String, Integer&gt; i : stock.entrySet()) {</span>
+<span class="nc" id="L200">      String s = i.getKey();</span>
+<span class="nc" id="L201">      int quantity = i.getValue();</span>
+<span class="nc" id="L202">      System.out.println(&quot;Product: &quot; + s + &quot;\t\t\tquantity: &quot; + quantity);</span>
+<span class="nc" id="L203">    }</span>
+<span class="nc" id="L204">  }</span>
 
   public HashMap&lt;String, Integer&gt; getStock() {
 <span class="fc" id="L207">    return this.stock;</span>
@@ -210,13 +210,13 @@ public class VendingMachine {
 
   //prints the purchase list to menu.
   public void printPurchaseList() {
-<span class="fc" id="L213">    System.out.println(&quot;Purchase list:&quot;);</span>
-<span class="fc bfc" id="L214" title="All 2 branches covered.">    for (Map.Entry&lt;Snack, Integer&gt; set : purchaseList.entrySet()) {</span>
-<span class="fc" id="L215">      String name = set.getKey().getName();</span>
-<span class="fc" id="L216">      int amount = set.getValue();</span>
-<span class="fc" id="L217">      System.out.printf(&quot;%40s %20s %n&quot;, name, Integer.toString(amount));</span>
-<span class="fc" id="L218">    }</span>
-<span class="fc" id="L219">  }</span>
+<span class="nc" id="L213">    System.out.println(&quot;Purchase list:&quot;);</span>
+<span class="nc bnc" id="L214" title="All 2 branches missed.">    for (Map.Entry&lt;Snack, Integer&gt; set : purchaseList.entrySet()) {</span>
+<span class="nc" id="L215">      String name = set.getKey().getName();</span>
+<span class="nc" id="L216">      int amount = set.getValue();</span>
+<span class="nc" id="L217">      System.out.printf(&quot;%40s %20s %n&quot;, name, Integer.toString(amount));</span>
+<span class="nc" id="L218">    }</span>
+<span class="nc" id="L219">  }</span>
 
   public HashMap&lt;Snack, Integer&gt; getPurchaseList() {
 <span class="fc" id="L222">    return this.purchaseList;</span>
