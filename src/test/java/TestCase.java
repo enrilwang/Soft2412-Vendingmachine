@@ -207,6 +207,7 @@ public class TestCase {
                 "Product: Lollies\t\t\tquantity: 10\n", out.toString());
 
     }
+//    Test PrintPurchaseList function
     @Test
     public void TestPrintPurchaseList(){
         ByteArrayOutputStream out = new ByteArrayOutputStream();
