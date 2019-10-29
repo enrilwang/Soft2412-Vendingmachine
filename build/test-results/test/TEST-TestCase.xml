@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestCase" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-10-29T12:02:16" hostname="PennydeMacBook-Air-2.local" time="0.026">
+<testsuite name="TestCase" tests="11" skipped="0" failures="0" errors="0" timestamp="2019-10-29T12:05:43" hostname="PennydeMacBook-Air-2.local" time="0.036">
   <properties/>
   <testcase name="TestSetAndGetSnakePrice" classname="TestCase" time="0.003"/>
-  <testcase name="TestGetStock" classname="TestCase" time="0.014"/>
+  <testcase name="TestGetStock" classname="TestCase" time="0.018"/>
+  <testcase name="TestSuccessfulBuy" classname="TestCase" time="0.002"/>
   <testcase name="TestSnacks" classname="TestCase" time="0.005"/>
-  <testcase name="TestCheckIsNumeric" classname="TestCase" time="0.0"/>
-  <testcase name="TestBuy" classname="TestCase" time="0.0"/>
+  <testcase name="TestShowStock" classname="TestCase" time="0.001"/>
+  <testcase name="TestCheckIsNumeric" classname="TestCase" time="0.001"/>
+  <testcase name="TestBuy" classname="TestCase" time="0.001"/>
   <testcase name="TestGetTotalPrice" classname="TestCase" time="0.0"/>
   <testcase name="TestSetAndGetSnakeCode" classname="TestCase" time="0.001"/>
-  <testcase name="TestSetAndGetSnakeName" classname="TestCase" time="0.0"/>
+  <testcase name="TestSetAndGetSnakeName" classname="TestCase" time="0.001"/>
+  <testcase name="TestPrintPurchaseList" classname="TestCase" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
