@@ -1,10 +1,11 @@
-import Arraylist;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Transaction {
-	private Arraylist<Integer> tran;
+	private HashMap<String, Integer> transaction=new HashMap<>();
 
 	Transaction(){
-		tran = new Arraylist<>();
+		transaction=new HashMap<>();
 	}
 
 
