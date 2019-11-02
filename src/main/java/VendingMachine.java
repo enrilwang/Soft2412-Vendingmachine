@@ -19,7 +19,7 @@ public class VendingMachine {
   private HashMap<String, Integer> stock = new HashMap<>();
 
   public VendingMachine() {
-    transaction = new Transaction();
+    //transaction = new Transaction();
     purchaseList = new HashMap<>();
     fill();
   }
@@ -225,4 +225,10 @@ public class VendingMachine {
   public void setPurchaseList(HashMap<Snack, Integer> purchaseList) {
     this.purchaseList = purchaseList;
   }
+
+  public void PrintStock(){
+    System.out.println(this.stock);
+  }
+
+
 }
