@@ -17,7 +17,7 @@ public class VendingMachine<purchaseList> {
   private Transaction transaction;
 
   private HashMap<Snack, Integer> purchaseList;
-  private HashMap<String, Integer> stock = new HashMap<>();
+  public static HashMap<String, Integer> stock = new HashMap<>();
 
   public VendingMachine() {
     transaction = new Transaction();
