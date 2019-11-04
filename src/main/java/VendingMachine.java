@@ -13,15 +13,17 @@ import snacks.Sneakers;
 import snacks.SourWorms;
 import snacks.Water;
 
-public class VendingMachine {
+public class VendingMachine<purchaseList> {
   private Transaction transaction;
+
   private HashMap<Snack, Integer> purchaseList;
   private HashMap<String, Integer> stock = new HashMap<>();
 
   public VendingMachine() {
-    //transaction = new Transaction();
+    transaction = new Transaction();
     purchaseList = new HashMap<>();
     fill();
+
   }
 
   // checks if there is stock available for the item to be purchased.
@@ -214,6 +216,7 @@ public class VendingMachine {
 
   //prints the purchase list to menu.
   public void printPurchaseList() {
+
     System.out.println("Purchase list:");
     for (Map.Entry<Snack, Integer> set : purchaseList.entrySet()) {
       String name = set.getKey().getName();
@@ -229,6 +232,18 @@ public class VendingMachine {
   public void setPurchaseList(HashMap<Snack, Integer> purchaseList) {
     this.purchaseList = purchaseList;
   }
+
+  /*public void printtran(){
+    System.out.println("Transaction list:");
+    for (Map.Entry<Integer,HashMap<Snack,Integer>> set : tran.entrySet()) {
+      int num = set.getKey();
+    }
+      for(Map.Entry<Snack,Integer> dd : set.getValue()) {
+        String name = set.getValue().;
+        int amount = set.getValue();
+        System.out.printf("%40s %40s %20s %n", num, name, Integer.toString(amount));
+      }
+    }*/
 
   public void PrintStock(){
     System.out.println(this.stock);

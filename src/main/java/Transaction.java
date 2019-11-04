@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import snacks.Snack;
 
 public class Transaction {
-	private HashMap<String, Integer> transaction;
+	private HashMap<Integer, HashMap<Snack,Integer>> transactionlist;
 
 
 	Transaction(){
-		transaction=new HashMap<>();
+		transactionlist=new HashMap<>();
 	}
 
 

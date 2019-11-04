@@ -1,7 +1,10 @@
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 import snacks.BBQChips;
+import snacks.Cancel;
 import snacks.Jellybeans;
 import snacks.Juice;
 import snacks.Lollies;
@@ -26,7 +29,10 @@ public class Menu {
   private Sneakers sneakers;
   private SourWorms sourWorms;
   private Water water;
-  private int quit = 0;
+  private HashMap<Integer, HashMap<Snack,Integer>> tran;
+  private int i = 0;
+  private Cancel cancel;
+
 
   public Menu() {
     vendingMachine = new VendingMachine();
@@ -41,7 +47,8 @@ public class Menu {
     sneakers = new Sneakers();
     sourWorms = new SourWorms();
     water = new Water();
-
+    cancel = new Cancel();
+    tran = new HashMap<Integer, HashMap<Snack,Integer>>();
     start();
   }
 
@@ -100,14 +107,17 @@ public class Menu {
           if (staff.ValidStaff()) {
             while(true) {
               System.out.println(
-                  "Do you want to change the price, 0 for yes, 1 for add volume, any other number for quit");
+                  "Do you want to change the price, 0 for yes, 1 for add volume, 2 for look the transcation, any other number for quit");
               String inn = scan.nextLine();
               if(inn.equals("0")) {
                 changePrice();
               }
               else if(inn.equals("1")){
                 addVolume();
-              }else {
+              }else if(inn.equals("2")){
+                printTran();
+              }
+                else {
                 start();
               }
             }
@@ -156,19 +166,25 @@ public class Menu {
         double amountPaid = Double.parseDouble(input);
         totalPaid += amountPaid;
       } else if (input.toLowerCase().equals("cancel")) {
-
+        HashMap<Snack,Integer> a = new HashMap<>();
+        a.put(new Cancel(),0);
+        tran.put(i,a);
         System.out.println("Here is your money back.\n\n\nNext customer.");
+        i += 1;
         start();
       } else {
         System.out.println("You have to pay with currency values listed above.");
       }
       DecimalFormat rounding = new DecimalFormat("#.00");
       double remainingAmount = Double.parseDouble(rounding.format(price - totalPaid));
+
       System.out.println("The remaining amount to be paid is: $" + remainingAmount);
       if (remainingAmount == 0.0) {
         System.out.println("Finished paying. Enjoy your snack.");
         vendingMachine.successfulBuy();
+        tran.put(i,vendingMachine.getPurchaseList());
         System.out.println("\n\nNext customer.");
+        i += 1;
         start();
       }
       if (remainingAmount < 0.0) {
@@ -176,7 +192,9 @@ public class Menu {
             "Purchase successful. Here is your change of $" + Math.abs(remainingAmount)
                 + " back.");
         vendingMachine.successfulBuy();
+        tran.put(i,vendingMachine.getPurchaseList());
         System.out.println("\n\nNext customer.");
+        i ++;
         start();
       }
     }
@@ -187,7 +205,11 @@ public class Menu {
   //each input is checked to see if it is cancel, if so, move on to next customer (call start()).
   private void cancelCheck(String input) {
     if (input.toLowerCase().equals("cancel")) {
+      HashMap<Snack,Integer> a = new HashMap<>();
+      a.put(new Cancel(),0);
+      tran.put(i,a);
       System.out.println("\n\nNext customer.");
+      i++;
       start();
     }
   }
@@ -357,6 +379,20 @@ public class Menu {
         vendingMachine.PrintStock();
       }
 
+    }
+
+
+    public void printTran(){
+      Set<Integer> abc = tran.keySet();
+      for (Integer bb : abc){
+        System.out.println(bb);
+        HashMap<Snack,Integer> valaue = tran.get(bb);
+        Set<Snack> v = valaue.keySet();
+        for(Snack a : v){
+          Integer k = valaue.get(a);
+          System.out.println("\t" + a.getName() + "___" + k);
+        }
+      }
     }
 
 
