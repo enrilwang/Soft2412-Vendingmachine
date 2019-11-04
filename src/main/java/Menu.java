@@ -84,7 +84,7 @@ public class Menu {
         }
         if(input.equals("11")){
           if(staff.ValidStaff()){
-            changePrice();
+            staff.changePrice();
 
             start();
           }else{
@@ -162,77 +162,9 @@ public class Menu {
   }
 
 
-  public void changePrice() {
-    Scanner scan = new Scanner(System.in);
-    while (true) {
-      System.out.println("Do you want to change the price, 0 for yes, any number for quit");
 
-      String in = scan.nextLine();
-      if (in.equals("0")) {
-        System.out.println("which one do you want to change price, type Code");
-        String input = scan.nextLine();
-        if (input.equals("1")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
 
-          bbq.setPrice(value);
-        } else if (input.equals("2")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
 
-          jelly.setPrice(value);
-        } else if (input.equals("3")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-
-          juice.setPrice(value);
-        } else if (input.equals("4")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-
-          lollies.setPrice(value);
-        } else if (input.equals("5")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-
-          mars.setPrice(value);
-        } else if (input.equals("6")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-
-          ochip.setPrice(value);
-        } else if (input.equals("7")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-
-          sneakers.setPrice(value);
-        } else if (input.equals("8")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-
-          sourWorms.setPrice(value);
-        } else if (input.equals("9")) {
-          System.out.println("How much do you want to set");
-          String input1 = scan.nextLine();
-          double value = Double.valueOf(input1.toString());
-          water.setPrice(value);
-
-        }
-      }
-      else{
-        break;
-      }
-    }
-
-  }
 
 
 

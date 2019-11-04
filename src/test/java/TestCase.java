@@ -269,18 +269,108 @@ public class TestCase {
 
 
     }
-//    @Test
-//    public void TestChangePrice(){
-//
-//        ByteArrayInputStream in = new ByteArrayInputStream("0\n1\n3\n".getBytes());
-//        System.setIn(in);
-//        ByteArrayOutputStream out = new ByteArrayOutputStream();
-//        System.setOut(new PrintStream(out));
-//        BBQChips bbq = new BBQChips();
-//        Menu test = new Menu();
-//        test.changePrice();
-//        Assert.assertEquals(3,bbq.getPrice(),0.1);
-//
-//
-//    }
+    @Test
+    public void TestChangePrice(){
+
+        ByteArrayInputStream in = new ByteArrayInputStream("0\n1\n3\n10\n".getBytes());
+        System.setIn(in);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Staff test = new Staff();
+        test.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+
+        ByteArrayInputStream in2 = new ByteArrayInputStream("0\n2\n3\n10\n".getBytes());
+        System.setIn(in2);
+        ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out2));
+        Staff test2 = new Staff();
+        test2.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in3 = new ByteArrayInputStream("0\n3\n3\n10\n".getBytes());
+        System.setIn(in3);
+        ByteArrayOutputStream out3 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out3));
+        Staff test3 = new Staff();
+        test3.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in4 = new ByteArrayInputStream("0\n4\n3\n10\n".getBytes());
+        System.setIn(in4);
+        ByteArrayOutputStream out4 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out4));
+        Staff test4 = new Staff();
+        test4.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in5 = new ByteArrayInputStream("0\n5\n3\n10\n".getBytes());
+        System.setIn(in5);
+        ByteArrayOutputStream out5 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out5));
+        Staff test5 = new Staff();
+        test5.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in6 = new ByteArrayInputStream("0\n6\n3\n10\n".getBytes());
+        System.setIn(in6);
+        ByteArrayOutputStream out6 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out6));
+        Staff test6 = new Staff();
+        test6.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in7 = new ByteArrayInputStream("0\n7\n3\n10\n".getBytes());
+        System.setIn(in7);
+        ByteArrayOutputStream out7 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out7));
+        Staff test7 = new Staff();
+        test7.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in8 = new ByteArrayInputStream("0\n8\n3\n10\n".getBytes());
+        System.setIn(in8);
+        ByteArrayOutputStream out8 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out8));
+        Staff test8 = new Staff();
+        test8.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+
+        ByteArrayInputStream in9 = new ByteArrayInputStream("0\n9\n3\n10\n".getBytes());
+        System.setIn(in9);
+        ByteArrayOutputStream out9 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out9));
+        Staff test9 = new Staff();
+        test9.changePrice();
+        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
+                "which one do you want to change price, type Code\n" +
+                "How much do you want to set\n" +
+                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+    }
+
 }
