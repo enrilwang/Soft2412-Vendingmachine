@@ -12,63 +12,16 @@ import snacks.Snack;
 import snacks.Sneakers;
 import snacks.SourWorms;
 import snacks.Water;
-import java.text.DecimalFormat;
-
 
 public class VendingMachine {
   private Transaction transaction;
   private HashMap<Snack, Integer> purchaseList;
   private HashMap<String, Integer> stock = new HashMap<>();
-  private BBQChips bbq;
-  private Jellybeans jelly;
-  private Juice juice;
-  private Lollies lollies;
-  private Mars mars;
-  private OriginalChips ochip;
-  private Sneakers sneakers;
-  private SourWorms sourWorms;
-  private Water water;
 
   public VendingMachine() {
-    //transaction = new Transaction();\
-
+    //transaction = new Transaction();
     purchaseList = new HashMap<>();
-    bbq = new BBQChips();
-    jelly = new Jellybeans();
-    juice = new Juice();
-    lollies = new Lollies();
-    mars = new Mars();
-    ochip = new OriginalChips();
-    sneakers = new Sneakers();
-    sourWorms = new SourWorms();
-    water = new Water();
     fill();
-  }
-  public void PayMethod(){
-    System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
-    System.out.println("You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
-    System.out.println("To cancel transaction, type in cancel.");
-  }
-  public void StartMenu(){
-    //ask customer what items they want to buy.
-    System.out.printf("%40s %20s %20s %n","BBQChips - Name: BBQChips","Price:$"+ bbq.getPrice() ,"Code:1");
-    System.out.printf("%40s %20s %20s %n","Jellybeans - Name: Jellybeans","Price:$"+jelly.getPrice(), "Code:2");
-    System.out.printf("%40s %20s %20s %n","Juice - Name: Juice", "Price:$"+juice.getPrice(), "Code:3");
-    System.out.printf("%40s %20s %20s %n","Lollies - Name: Lollies","Price:$"+lollies.getPrice(), "Code:4");
-    System.out.printf("%40s %20s %20s %n","Mars - Name: Mars","Price:$"+mars.getPrice(), "Code:5");
-    System.out.printf("%40s %20s %20s %n","OriginalChips - Name: OriginalChips", "Price:$"+ochip.getPrice(),"Code:6");
-    System.out.printf("%40s %20s %20s %n","Sneakers - Name: Sneakers","Price:$"+sneakers.getPrice(), "Code:7");
-    System.out.printf("%40s %20s %20s %n","SourWorms - Name: SourWorms","Price:$"+sourWorms.getPrice(), "Code:8");
-    System.out.printf("%40s %20s %20s %n","Water - Name: Water", "Price:$"+water.getPrice(),"Code:9");
-
-    System.out.println("\nAt any point during the purchase, type cancel to cancel transaction.");
-
-    System.out.println("\nPlease input the product name or code of snack you wish to purchase.");
-
-    System.out.println("\nIf you are a staff, please type 11 ");
-
-    System.out.println("\nIf you want to see stock, please type 12 ");
-
   }
 
   // checks if there is stock available for the item to be purchased.
@@ -248,6 +201,10 @@ public class VendingMachine {
       int quantity = i.getValue();
       System.out.println("Product: " + s + "\t\t\tquantity: " + quantity);
     }
+  }
+
+  public int getStock(String nu){
+    return stock.get(nu);
   }
 
   public HashMap<String, Integer> getStock() {
