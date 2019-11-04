@@ -397,4 +397,15 @@ public class TestCase {
                 "If you want to see stock, please type 12 \n",out.toString());
 
     }
+    @Test
+    public void TestPayMethod(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        test.PayMethod();
+        Assert.assertEquals("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)\n" +
+                "You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.\n" +
+                "To cancel transaction, type in cancel.\n",out.toString());
+
+    }
 }

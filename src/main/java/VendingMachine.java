@@ -12,6 +12,8 @@ import snacks.Snack;
 import snacks.Sneakers;
 import snacks.SourWorms;
 import snacks.Water;
+import java.text.DecimalFormat;
+
 
 public class VendingMachine {
   private Transaction transaction;
@@ -28,7 +30,8 @@ public class VendingMachine {
   private Water water;
 
   public VendingMachine() {
-    //transaction = new Transaction();
+    //transaction = new Transaction();\
+
     purchaseList = new HashMap<>();
     bbq = new BBQChips();
     jelly = new Jellybeans();
@@ -41,7 +44,13 @@ public class VendingMachine {
     water = new Water();
     fill();
   }
+  public void PayMethod(){
+    System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
+    System.out.println("You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
+    System.out.println("To cancel transaction, type in cancel.");
+  }
   public void StartMenu(){
+    //ask customer what items they want to buy.
     System.out.printf("%40s %20s %20s %n","BBQChips - Name: BBQChips","Price:$"+ bbq.getPrice() ,"Code:1");
     System.out.printf("%40s %20s %20s %n","Jellybeans - Name: Jellybeans","Price:$"+jelly.getPrice(), "Code:2");
     System.out.printf("%40s %20s %20s %n","Juice - Name: Juice", "Price:$"+juice.getPrice(), "Code:3");

@@ -50,7 +50,7 @@ public class Menu {
     vendingMachine.resetPurchase();
     while(true){
       vendingMachine.StartMenu();
-      //ask customer what items they want to buy.
+
       while(true){
 
         String input = scan.nextLine();
@@ -98,9 +98,7 @@ public class Menu {
       double price=Double.parseDouble(new DecimalFormat("#.##").format(vendingMachine.getTotalPrice()));
       vendingMachine.printPurchaseList();
       System.out.println("\n\nThe total price is $"+String.format("%.2f",price));
-      System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
-      System.out.println("You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
-      System.out.println("To cancel transaction, type in cancel.");
+      vendingMachine.PayMethod();
       //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
       double totalPaid=0.0;
       while(scan.hasNext()){

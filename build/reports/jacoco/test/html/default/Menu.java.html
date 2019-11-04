@@ -50,7 +50,7 @@ public class Menu {
 <span class="nc" id="L50">    vendingMachine.resetPurchase();</span>
     while(true){
 <span class="nc" id="L52">      vendingMachine.StartMenu();</span>
-      //ask customer what items they want to buy.
+
       while(true){
 
 <span class="nc" id="L56">        String input = scan.nextLine();</span>
@@ -98,52 +98,50 @@ public class Menu {
 <span class="nc" id="L98">      double price=Double.parseDouble(new DecimalFormat(&quot;#.##&quot;).format(vendingMachine.getTotalPrice()));</span>
 <span class="nc" id="L99">      vendingMachine.printPurchaseList();</span>
 <span class="nc" id="L100">      System.out.println(&quot;\n\nThe total price is $&quot;+String.format(&quot;%.2f&quot;,price));</span>
-<span class="nc" id="L101">      System.out.println(&quot;Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)&quot;);</span>
-<span class="nc" id="L102">      System.out.println(&quot;You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.&quot;);</span>
-<span class="nc" id="L103">      System.out.println(&quot;To cancel transaction, type in cancel.&quot;);</span>
+<span class="nc" id="L101">      vendingMachine.PayMethod();</span>
       //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
-<span class="nc" id="L105">      double totalPaid=0.0;</span>
-<span class="nc bnc" id="L106" title="All 2 branches missed.">      while(scan.hasNext()){</span>
-<span class="nc" id="L107">        String input = scan.nextLine();</span>
-<span class="nc bnc" id="L108" title="All 2 branches missed.">        if(input.length()==3){</span>
-<span class="nc" id="L109">          double amountPaid=Double.parseDouble(input.substring(0,2));</span>
-<span class="nc" id="L110">          totalPaid+=amountPaid/100;</span>
-<span class="nc bnc" id="L111" title="All 4 branches missed.">        }else if(input.length()==2 ||input.length()==1){</span>
-<span class="nc" id="L112">          double amountPaid=Double.parseDouble(input);</span>
-<span class="nc" id="L113">          totalPaid+=amountPaid;</span>
-<span class="nc bnc" id="L114" title="All 2 branches missed.">        }else if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
-<span class="nc" id="L115">          System.out.println(&quot;Here is your money back.\n\n\nNext customer.&quot;);</span>
-<span class="nc" id="L116">          start();</span>
+<span class="nc" id="L103">      double totalPaid=0.0;</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">      while(scan.hasNext()){</span>
+<span class="nc" id="L105">        String input = scan.nextLine();</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        if(input.length()==3){</span>
+<span class="nc" id="L107">          double amountPaid=Double.parseDouble(input.substring(0,2));</span>
+<span class="nc" id="L108">          totalPaid+=amountPaid/100;</span>
+<span class="nc bnc" id="L109" title="All 4 branches missed.">        }else if(input.length()==2 ||input.length()==1){</span>
+<span class="nc" id="L110">          double amountPaid=Double.parseDouble(input);</span>
+<span class="nc" id="L111">          totalPaid+=amountPaid;</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">        }else if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
+<span class="nc" id="L113">          System.out.println(&quot;Here is your money back.\n\n\nNext customer.&quot;);</span>
+<span class="nc" id="L114">          start();</span>
         }else{
-<span class="nc" id="L118">          System.out.println(&quot;You have to pay with currency values listed above.&quot;);</span>
+<span class="nc" id="L116">          System.out.println(&quot;You have to pay with currency values listed above.&quot;);</span>
         }
-<span class="nc" id="L120">        DecimalFormat rounding=new DecimalFormat(&quot;#.00&quot;);</span>
-<span class="nc" id="L121">        double remainingAmount=Double.parseDouble(rounding.format(price-totalPaid));</span>
-<span class="nc" id="L122">        System.out.println(&quot;The remaining amount to be paid is: $&quot;+remainingAmount);</span>
-<span class="nc bnc" id="L123" title="All 2 branches missed.">        if(remainingAmount==0.0){</span>
-<span class="nc" id="L124">          System.out.println(&quot;Finished paying. Enjoy your snack.&quot;);</span>
-<span class="nc" id="L125">          vendingMachine.successfulBuy();</span>
-<span class="nc" id="L126">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
-<span class="nc" id="L127">          start();</span>
+<span class="nc" id="L118">        DecimalFormat rounding=new DecimalFormat(&quot;#.00&quot;);</span>
+<span class="nc" id="L119">        double remainingAmount=Double.parseDouble(rounding.format(price-totalPaid));</span>
+<span class="nc" id="L120">        System.out.println(&quot;The remaining amount to be paid is: $&quot;+remainingAmount);</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">        if(remainingAmount==0.0){</span>
+<span class="nc" id="L122">          System.out.println(&quot;Finished paying. Enjoy your snack.&quot;);</span>
+<span class="nc" id="L123">          vendingMachine.successfulBuy();</span>
+<span class="nc" id="L124">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
+<span class="nc" id="L125">          start();</span>
         }
-<span class="nc bnc" id="L129" title="All 2 branches missed.">        if(remainingAmount&lt;0.0){</span>
-<span class="nc" id="L130">          System.out.println(&quot;Purchase successful. Here is your change of $&quot;+Math.abs(remainingAmount)+&quot; back.&quot;);</span>
-<span class="nc" id="L131">          vendingMachine.successfulBuy();</span>
-<span class="nc" id="L132">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
-<span class="nc" id="L133">          start();</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">        if(remainingAmount&lt;0.0){</span>
+<span class="nc" id="L128">          System.out.println(&quot;Purchase successful. Here is your change of $&quot;+Math.abs(remainingAmount)+&quot; back.&quot;);</span>
+<span class="nc" id="L129">          vendingMachine.successfulBuy();</span>
+<span class="nc" id="L130">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
+<span class="nc" id="L131">          start();</span>
         }
-<span class="nc" id="L135">      }</span>
+<span class="nc" id="L133">      }</span>
 
-<span class="nc" id="L137">    }</span>
+<span class="nc" id="L135">    }</span>
   }
 
   //each input is checked to see if it is cancel, if so, move on to next customer (call start()).
   private void cancelCheck(String input){
-<span class="nc bnc" id="L142" title="All 2 branches missed.">    if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
-<span class="nc" id="L143">      System.out.println(&quot;\n\nNext customer.&quot;);</span>
-<span class="nc" id="L144">      start();</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">    if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
+<span class="nc" id="L141">      System.out.println(&quot;\n\nNext customer.&quot;);</span>
+<span class="nc" id="L142">      start();</span>
     }
-<span class="nc" id="L146">  }</span>
+<span class="nc" id="L144">  }</span>
 
 
 

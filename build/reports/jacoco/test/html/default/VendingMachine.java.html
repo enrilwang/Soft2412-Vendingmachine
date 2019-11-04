@@ -12,11 +12,13 @@ import snacks.Snack;
 import snacks.Sneakers;
 import snacks.SourWorms;
 import snacks.Water;
+import java.text.DecimalFormat;
+
 
 public class VendingMachine {
   private Transaction transaction;
   private HashMap&lt;Snack, Integer&gt; purchaseList;
-<span class="fc" id="L19">  private HashMap&lt;String, Integer&gt; stock = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L21">  private HashMap&lt;String, Integer&gt; stock = new HashMap&lt;&gt;();</span>
   private BBQChips bbq;
   private Jellybeans jelly;
   private Juice juice;
@@ -27,246 +29,253 @@ public class VendingMachine {
   private SourWorms sourWorms;
   private Water water;
 
-<span class="fc" id="L30">  public VendingMachine() {</span>
-    //transaction = new Transaction();
-<span class="fc" id="L32">    purchaseList = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L33">    bbq = new BBQChips();</span>
-<span class="fc" id="L34">    jelly = new Jellybeans();</span>
-<span class="fc" id="L35">    juice = new Juice();</span>
-<span class="fc" id="L36">    lollies = new Lollies();</span>
-<span class="fc" id="L37">    mars = new Mars();</span>
-<span class="fc" id="L38">    ochip = new OriginalChips();</span>
-<span class="fc" id="L39">    sneakers = new Sneakers();</span>
-<span class="fc" id="L40">    sourWorms = new SourWorms();</span>
-<span class="fc" id="L41">    water = new Water();</span>
-<span class="fc" id="L42">    fill();</span>
-<span class="fc" id="L43">  }</span>
+<span class="fc" id="L32">  public VendingMachine() {</span>
+    //transaction = new Transaction();\
+
+<span class="fc" id="L35">    purchaseList = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L36">    bbq = new BBQChips();</span>
+<span class="fc" id="L37">    jelly = new Jellybeans();</span>
+<span class="fc" id="L38">    juice = new Juice();</span>
+<span class="fc" id="L39">    lollies = new Lollies();</span>
+<span class="fc" id="L40">    mars = new Mars();</span>
+<span class="fc" id="L41">    ochip = new OriginalChips();</span>
+<span class="fc" id="L42">    sneakers = new Sneakers();</span>
+<span class="fc" id="L43">    sourWorms = new SourWorms();</span>
+<span class="fc" id="L44">    water = new Water();</span>
+<span class="fc" id="L45">    fill();</span>
+<span class="fc" id="L46">  }</span>
+  public void PayMethod(){
+<span class="fc" id="L48">    System.out.println(&quot;Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)&quot;);</span>
+<span class="fc" id="L49">    System.out.println(&quot;You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.&quot;);</span>
+<span class="fc" id="L50">    System.out.println(&quot;To cancel transaction, type in cancel.&quot;);</span>
+<span class="fc" id="L51">  }</span>
   public void StartMenu(){
-<span class="fc" id="L45">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;BBQChips - Name: BBQChips&quot;,&quot;Price:$&quot;+ bbq.getPrice() ,&quot;Code:1&quot;);</span>
-<span class="fc" id="L46">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Jellybeans - Name: Jellybeans&quot;,&quot;Price:$&quot;+jelly.getPrice(), &quot;Code:2&quot;);</span>
-<span class="fc" id="L47">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Juice - Name: Juice&quot;, &quot;Price:$&quot;+juice.getPrice(), &quot;Code:3&quot;);</span>
-<span class="fc" id="L48">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Lollies - Name: Lollies&quot;,&quot;Price:$&quot;+lollies.getPrice(), &quot;Code:4&quot;);</span>
-<span class="fc" id="L49">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Mars - Name: Mars&quot;,&quot;Price:$&quot;+mars.getPrice(), &quot;Code:5&quot;);</span>
-<span class="fc" id="L50">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;OriginalChips - Name: OriginalChips&quot;, &quot;Price:$&quot;+ochip.getPrice(),&quot;Code:6&quot;);</span>
-<span class="fc" id="L51">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Sneakers - Name: Sneakers&quot;,&quot;Price:$&quot;+sneakers.getPrice(), &quot;Code:7&quot;);</span>
-<span class="fc" id="L52">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;SourWorms - Name: SourWorms&quot;,&quot;Price:$&quot;+sourWorms.getPrice(), &quot;Code:8&quot;);</span>
-<span class="fc" id="L53">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Water - Name: Water&quot;, &quot;Price:$&quot;+water.getPrice(),&quot;Code:9&quot;);</span>
+    //ask customer what items they want to buy.
+<span class="fc" id="L54">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;BBQChips - Name: BBQChips&quot;,&quot;Price:$&quot;+ bbq.getPrice() ,&quot;Code:1&quot;);</span>
+<span class="fc" id="L55">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Jellybeans - Name: Jellybeans&quot;,&quot;Price:$&quot;+jelly.getPrice(), &quot;Code:2&quot;);</span>
+<span class="fc" id="L56">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Juice - Name: Juice&quot;, &quot;Price:$&quot;+juice.getPrice(), &quot;Code:3&quot;);</span>
+<span class="fc" id="L57">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Lollies - Name: Lollies&quot;,&quot;Price:$&quot;+lollies.getPrice(), &quot;Code:4&quot;);</span>
+<span class="fc" id="L58">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Mars - Name: Mars&quot;,&quot;Price:$&quot;+mars.getPrice(), &quot;Code:5&quot;);</span>
+<span class="fc" id="L59">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;OriginalChips - Name: OriginalChips&quot;, &quot;Price:$&quot;+ochip.getPrice(),&quot;Code:6&quot;);</span>
+<span class="fc" id="L60">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Sneakers - Name: Sneakers&quot;,&quot;Price:$&quot;+sneakers.getPrice(), &quot;Code:7&quot;);</span>
+<span class="fc" id="L61">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;SourWorms - Name: SourWorms&quot;,&quot;Price:$&quot;+sourWorms.getPrice(), &quot;Code:8&quot;);</span>
+<span class="fc" id="L62">    System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Water - Name: Water&quot;, &quot;Price:$&quot;+water.getPrice(),&quot;Code:9&quot;);</span>
 
-<span class="fc" id="L55">    System.out.println(&quot;\nAt any point during the purchase, type cancel to cancel transaction.&quot;);</span>
+<span class="fc" id="L64">    System.out.println(&quot;\nAt any point during the purchase, type cancel to cancel transaction.&quot;);</span>
 
-<span class="fc" id="L57">    System.out.println(&quot;\nPlease input the product name or code of snack you wish to purchase.&quot;);</span>
+<span class="fc" id="L66">    System.out.println(&quot;\nPlease input the product name or code of snack you wish to purchase.&quot;);</span>
 
-<span class="fc" id="L59">    System.out.println(&quot;\nIf you are a staff, please type 11 &quot;);</span>
+<span class="fc" id="L68">    System.out.println(&quot;\nIf you are a staff, please type 11 &quot;);</span>
 
-<span class="fc" id="L61">    System.out.println(&quot;\nIf you want to see stock, please type 12 &quot;);</span>
+<span class="fc" id="L70">    System.out.println(&quot;\nIf you want to see stock, please type 12 &quot;);</span>
 
-<span class="fc" id="L63">  }</span>
+<span class="fc" id="L72">  }</span>
 
   // checks if there is stock available for the item to be purchased.
   // if the amount of stock after purchase will be negative, then return false.
   public boolean stockAvailable(String snack, Integer amount) {
-<span class="fc bfc" id="L68" title="All 2 branches covered.">    for (String stockSnack : stock.keySet()) {</span>
-<span class="fc bfc" id="L69" title="All 2 branches covered.">      if (snack.equals(stockSnack)) {</span>
-<span class="pc bpc" id="L70" title="1 of 2 branches missed.">        if (stock.get(stockSnack) - amount &lt; 0) {</span>
-<span class="nc" id="L71">          System.out.println(</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">    for (String stockSnack : stock.keySet()) {</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">      if (snack.equals(stockSnack)) {</span>
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">        if (stock.get(stockSnack) - amount &lt; 0) {</span>
+<span class="nc" id="L80">          System.out.println(</span>
               &quot;You cannot purchase &quot;
                   + amount
                   + &quot; &quot;
                   + snack
                   + &quot; because there are only &quot;
-<span class="nc" id="L77">                  + stock.get(stockSnack)</span>
+<span class="nc" id="L86">                  + stock.get(stockSnack)</span>
                   + &quot; &quot;
                   + snack
                   + &quot; left in the vending machine.&quot;);
         }
-<span class="fc" id="L82">        return true;</span>
+<span class="fc" id="L91">        return true;</span>
       }
-<span class="fc" id="L84">    }</span>
-<span class="fc" id="L85">    return true;</span>
+<span class="fc" id="L93">    }</span>
+<span class="fc" id="L94">    return true;</span>
   }
 
   // puts item in purchase list, not yet confirmed.
   // if no stock available, then return false.
   public boolean buy(String input, int quantity) {
-<span class="fc bfc" id="L91" title="All 2 branches covered.">    if (isNumeric(input)) {</span>
-<span class="fc" id="L92">      int i = Integer.parseInt(input);</span>
-<span class="fc bfc" id="L93" title="All 2 branches covered.">      if (i == 1) {</span>
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if (stockAvailable(&quot;BBQChips&quot;, quantity)) {</span>
-<span class="fc" id="L95">          purchaseList.put(new BBQChips(), quantity);</span>
-<span class="fc" id="L96">          return true;</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">    if (isNumeric(input)) {</span>
+<span class="fc" id="L101">      int i = Integer.parseInt(input);</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">      if (i == 1) {</span>
+<span class="pc bpc" id="L103" title="1 of 2 branches missed.">        if (stockAvailable(&quot;BBQChips&quot;, quantity)) {</span>
+<span class="fc" id="L104">          purchaseList.put(new BBQChips(), quantity);</span>
+<span class="fc" id="L105">          return true;</span>
         }
-<span class="fc bfc" id="L98" title="All 2 branches covered.">      } else if (i == 2) {</span>
-<span class="pc bpc" id="L99" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Jellybeans&quot;, quantity)) {</span>
-<span class="fc" id="L100">          purchaseList.put(new Jellybeans(), quantity);</span>
-<span class="fc" id="L101">          return true;</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">      } else if (i == 2) {</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Jellybeans&quot;, quantity)) {</span>
+<span class="fc" id="L109">          purchaseList.put(new Jellybeans(), quantity);</span>
+<span class="fc" id="L110">          return true;</span>
         }
-<span class="fc bfc" id="L103" title="All 2 branches covered.">      } else if (i == 3) {</span>
-<span class="pc bpc" id="L104" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Juice&quot;, quantity)) {</span>
-<span class="fc" id="L105">          purchaseList.put(new Juice(), quantity);</span>
-<span class="fc" id="L106">          return true;</span>
+<span class="fc bfc" id="L112" title="All 2 branches covered.">      } else if (i == 3) {</span>
+<span class="pc bpc" id="L113" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Juice&quot;, quantity)) {</span>
+<span class="fc" id="L114">          purchaseList.put(new Juice(), quantity);</span>
+<span class="fc" id="L115">          return true;</span>
         }
-<span class="fc bfc" id="L108" title="All 2 branches covered.">      } else if (i == 4) {</span>
-<span class="pc bpc" id="L109" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Lollies&quot;, quantity)) {</span>
-<span class="fc" id="L110">          purchaseList.put(new Lollies(), quantity);</span>
-<span class="fc" id="L111">          return true;</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">      } else if (i == 4) {</span>
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Lollies&quot;, quantity)) {</span>
+<span class="fc" id="L119">          purchaseList.put(new Lollies(), quantity);</span>
+<span class="fc" id="L120">          return true;</span>
         }
-<span class="fc bfc" id="L113" title="All 2 branches covered.">      } else if (i == 5) {</span>
-<span class="pc bpc" id="L114" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Mars&quot;, quantity)) {</span>
-<span class="fc" id="L115">          purchaseList.put(new Mars(), quantity);</span>
-<span class="fc" id="L116">          return true;</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">      } else if (i == 5) {</span>
+<span class="pc bpc" id="L123" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Mars&quot;, quantity)) {</span>
+<span class="fc" id="L124">          purchaseList.put(new Mars(), quantity);</span>
+<span class="fc" id="L125">          return true;</span>
         }
-<span class="fc bfc" id="L118" title="All 2 branches covered.">      } else if (i == 6) {</span>
-<span class="pc bpc" id="L119" title="1 of 2 branches missed.">        if (stockAvailable(&quot;OriginalChips&quot;, quantity)) {</span>
-<span class="fc" id="L120">          purchaseList.put(new OriginalChips(), quantity);</span>
-<span class="fc" id="L121">          return true;</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">      } else if (i == 6) {</span>
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">        if (stockAvailable(&quot;OriginalChips&quot;, quantity)) {</span>
+<span class="fc" id="L129">          purchaseList.put(new OriginalChips(), quantity);</span>
+<span class="fc" id="L130">          return true;</span>
         }
-<span class="fc bfc" id="L123" title="All 2 branches covered.">      } else if (i == 7) {</span>
-<span class="pc bpc" id="L124" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Sneakers&quot;, quantity)) {</span>
-<span class="fc" id="L125">          purchaseList.put(new Sneakers(), quantity);</span>
-<span class="fc" id="L126">          return true;</span>
+<span class="fc bfc" id="L132" title="All 2 branches covered.">      } else if (i == 7) {</span>
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Sneakers&quot;, quantity)) {</span>
+<span class="fc" id="L134">          purchaseList.put(new Sneakers(), quantity);</span>
+<span class="fc" id="L135">          return true;</span>
         }
-<span class="fc bfc" id="L128" title="All 2 branches covered.">      } else if (i == 8) {</span>
-<span class="pc bpc" id="L129" title="1 of 2 branches missed.">        if (stockAvailable(&quot;SourWorms&quot;, quantity)) {</span>
-<span class="fc" id="L130">          purchaseList.put(new SourWorms(), quantity);</span>
-<span class="fc" id="L131">          return true;</span>
+<span class="fc bfc" id="L137" title="All 2 branches covered.">      } else if (i == 8) {</span>
+<span class="pc bpc" id="L138" title="1 of 2 branches missed.">        if (stockAvailable(&quot;SourWorms&quot;, quantity)) {</span>
+<span class="fc" id="L139">          purchaseList.put(new SourWorms(), quantity);</span>
+<span class="fc" id="L140">          return true;</span>
         }
-<span class="pc bpc" id="L133" title="1 of 2 branches missed.">      } else if (i == 9) {</span>
-<span class="pc bpc" id="L134" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Water&quot;, quantity)) {</span>
-<span class="fc" id="L135">          purchaseList.put(new Water(), quantity);</span>
-<span class="fc" id="L136">          return true;</span>
+<span class="pc bpc" id="L142" title="1 of 2 branches missed.">      } else if (i == 9) {</span>
+<span class="pc bpc" id="L143" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Water&quot;, quantity)) {</span>
+<span class="fc" id="L144">          purchaseList.put(new Water(), quantity);</span>
+<span class="fc" id="L145">          return true;</span>
         }
       }
-<span class="nc" id="L139">    } else {</span>
-<span class="fc" id="L140">      String s = input.toLowerCase();</span>
-<span class="fc bfc" id="L141" title="All 2 branches covered.">      if (s.equals(&quot;bbqchips&quot;)) {</span>
-<span class="pc bpc" id="L142" title="1 of 2 branches missed.">        if (stockAvailable(&quot;BBQChips&quot;, quantity)) {</span>
-<span class="fc" id="L143">          purchaseList.put(new BBQChips(), quantity);</span>
-<span class="fc" id="L144">          return true;</span>
+<span class="nc" id="L148">    } else {</span>
+<span class="fc" id="L149">      String s = input.toLowerCase();</span>
+<span class="fc bfc" id="L150" title="All 2 branches covered.">      if (s.equals(&quot;bbqchips&quot;)) {</span>
+<span class="pc bpc" id="L151" title="1 of 2 branches missed.">        if (stockAvailable(&quot;BBQChips&quot;, quantity)) {</span>
+<span class="fc" id="L152">          purchaseList.put(new BBQChips(), quantity);</span>
+<span class="fc" id="L153">          return true;</span>
         }
-<span class="fc bfc" id="L146" title="All 2 branches covered.">      } else if (s.equals(&quot;jellybeans&quot;)) {</span>
-<span class="pc bpc" id="L147" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Jellybeans&quot;, quantity)) {</span>
-<span class="fc" id="L148">          purchaseList.put(new Jellybeans(), quantity);</span>
-<span class="fc" id="L149">          return true;</span>
+<span class="fc bfc" id="L155" title="All 2 branches covered.">      } else if (s.equals(&quot;jellybeans&quot;)) {</span>
+<span class="pc bpc" id="L156" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Jellybeans&quot;, quantity)) {</span>
+<span class="fc" id="L157">          purchaseList.put(new Jellybeans(), quantity);</span>
+<span class="fc" id="L158">          return true;</span>
         }
-<span class="fc bfc" id="L151" title="All 2 branches covered.">      } else if (s.equals(&quot;juice&quot;)) {</span>
-<span class="pc bpc" id="L152" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Juice&quot;, quantity)) {</span>
-<span class="fc" id="L153">          purchaseList.put(new Juice(), quantity);</span>
-<span class="fc" id="L154">          return true;</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">      } else if (s.equals(&quot;juice&quot;)) {</span>
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Juice&quot;, quantity)) {</span>
+<span class="fc" id="L162">          purchaseList.put(new Juice(), quantity);</span>
+<span class="fc" id="L163">          return true;</span>
         }
-<span class="fc bfc" id="L156" title="All 2 branches covered.">      } else if (s.equals(&quot;lollies&quot;)) {</span>
-<span class="pc bpc" id="L157" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Lollies&quot;, quantity)) {</span>
-<span class="fc" id="L158">          purchaseList.put(new Lollies(), quantity);</span>
-<span class="fc" id="L159">          return true;</span>
+<span class="fc bfc" id="L165" title="All 2 branches covered.">      } else if (s.equals(&quot;lollies&quot;)) {</span>
+<span class="pc bpc" id="L166" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Lollies&quot;, quantity)) {</span>
+<span class="fc" id="L167">          purchaseList.put(new Lollies(), quantity);</span>
+<span class="fc" id="L168">          return true;</span>
         }
-<span class="fc bfc" id="L161" title="All 2 branches covered.">      } else if (s.equals(&quot;mars&quot;)) {</span>
-<span class="pc bpc" id="L162" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Mars&quot;, quantity)) {</span>
-<span class="fc" id="L163">          purchaseList.put(new Mars(), quantity);</span>
-<span class="fc" id="L164">          return true;</span>
+<span class="fc bfc" id="L170" title="All 2 branches covered.">      } else if (s.equals(&quot;mars&quot;)) {</span>
+<span class="pc bpc" id="L171" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Mars&quot;, quantity)) {</span>
+<span class="fc" id="L172">          purchaseList.put(new Mars(), quantity);</span>
+<span class="fc" id="L173">          return true;</span>
         }
-<span class="fc bfc" id="L166" title="All 2 branches covered.">      } else if (s.equals(&quot;originalchips&quot;)) {</span>
-<span class="pc bpc" id="L167" title="1 of 2 branches missed.">        if (stockAvailable(&quot;OriginalChips&quot;, quantity)) {</span>
-<span class="fc" id="L168">          purchaseList.put(new OriginalChips(), quantity);</span>
-<span class="fc" id="L169">          return true;</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">      } else if (s.equals(&quot;originalchips&quot;)) {</span>
+<span class="pc bpc" id="L176" title="1 of 2 branches missed.">        if (stockAvailable(&quot;OriginalChips&quot;, quantity)) {</span>
+<span class="fc" id="L177">          purchaseList.put(new OriginalChips(), quantity);</span>
+<span class="fc" id="L178">          return true;</span>
         }
-<span class="fc bfc" id="L171" title="All 2 branches covered.">      } else if (s.equals(&quot;sneakers&quot;)) {</span>
-<span class="pc bpc" id="L172" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Sneakers&quot;, quantity)) {</span>
-<span class="fc" id="L173">          purchaseList.put(new Sneakers(), quantity);</span>
-<span class="fc" id="L174">          return true;</span>
+<span class="fc bfc" id="L180" title="All 2 branches covered.">      } else if (s.equals(&quot;sneakers&quot;)) {</span>
+<span class="pc bpc" id="L181" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Sneakers&quot;, quantity)) {</span>
+<span class="fc" id="L182">          purchaseList.put(new Sneakers(), quantity);</span>
+<span class="fc" id="L183">          return true;</span>
         }
-<span class="fc bfc" id="L176" title="All 2 branches covered.">      } else if (s.equals(&quot;sourworms&quot;)) {</span>
-<span class="pc bpc" id="L177" title="1 of 2 branches missed.">        if (stockAvailable(&quot;SourWorms&quot;, quantity)) {</span>
-<span class="fc" id="L178">          purchaseList.put(new SourWorms(), quantity);</span>
-<span class="fc" id="L179">          return true;</span>
+<span class="fc bfc" id="L185" title="All 2 branches covered.">      } else if (s.equals(&quot;sourworms&quot;)) {</span>
+<span class="pc bpc" id="L186" title="1 of 2 branches missed.">        if (stockAvailable(&quot;SourWorms&quot;, quantity)) {</span>
+<span class="fc" id="L187">          purchaseList.put(new SourWorms(), quantity);</span>
+<span class="fc" id="L188">          return true;</span>
         }
-<span class="pc bpc" id="L181" title="1 of 2 branches missed.">      } else if (s.equals(&quot;water&quot;)) {</span>
-<span class="pc bpc" id="L182" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Water&quot;, quantity)) {</span>
-<span class="fc" id="L183">          purchaseList.put(new Water(), quantity);</span>
-<span class="fc" id="L184">          return true;</span>
+<span class="pc bpc" id="L190" title="1 of 2 branches missed.">      } else if (s.equals(&quot;water&quot;)) {</span>
+<span class="pc bpc" id="L191" title="1 of 2 branches missed.">        if (stockAvailable(&quot;Water&quot;, quantity)) {</span>
+<span class="fc" id="L192">          purchaseList.put(new Water(), quantity);</span>
+<span class="fc" id="L193">          return true;</span>
         }
       }
     }
-<span class="nc" id="L188">    return false;</span>
+<span class="nc" id="L197">    return false;</span>
   }
 
   // when purchase is successful, reduce stock by the amount.
   public void successfulBuy() {
-<span class="fc bfc" id="L193" title="All 2 branches covered.">    for (Snack snack : purchaseList.keySet()) {</span>
-<span class="fc bfc" id="L194" title="All 2 branches covered.">      for (String stockSnack : stock.keySet()) {</span>
-<span class="fc bfc" id="L195" title="All 2 branches covered.">        if (snack.getName().equals(stockSnack)) {</span>
-<span class="fc" id="L196">          stock.put(stockSnack, stock.get(stockSnack) - purchaseList.get(snack));</span>
+<span class="fc bfc" id="L202" title="All 2 branches covered.">    for (Snack snack : purchaseList.keySet()) {</span>
+<span class="fc bfc" id="L203" title="All 2 branches covered.">      for (String stockSnack : stock.keySet()) {</span>
+<span class="fc bfc" id="L204" title="All 2 branches covered.">        if (snack.getName().equals(stockSnack)) {</span>
+<span class="fc" id="L205">          stock.put(stockSnack, stock.get(stockSnack) - purchaseList.get(snack));</span>
         }
-<span class="fc" id="L198">      }</span>
-<span class="fc" id="L199">    }</span>
-<span class="fc" id="L200">  }</span>
+<span class="fc" id="L207">      }</span>
+<span class="fc" id="L208">    }</span>
+<span class="fc" id="L209">  }</span>
 
   public boolean isNumeric(String input) {
-<span class="fc bfc" id="L203" title="All 2 branches covered.">    for (char i : input.toCharArray()) {</span>
-<span class="fc bfc" id="L204" title="All 2 branches covered.">      if (!Character.isDigit(i)) return false;</span>
+<span class="fc bfc" id="L212" title="All 2 branches covered.">    for (char i : input.toCharArray()) {</span>
+<span class="fc bfc" id="L213" title="All 2 branches covered.">      if (!Character.isDigit(i)) return false;</span>
     }
-<span class="fc" id="L206">    return true;</span>
+<span class="fc" id="L215">    return true;</span>
   }
 
   public double getTotalPrice() {
-<span class="fc" id="L210">    double total = 0.0;</span>
-<span class="fc bfc" id="L211" title="All 2 branches covered.">    for (Snack i : purchaseList.keySet()) {</span>
-<span class="fc" id="L212">      total += i.getPrice() * purchaseList.get(i);</span>
-<span class="fc" id="L213">    }</span>
-<span class="fc" id="L214">    return total;</span>
+<span class="fc" id="L219">    double total = 0.0;</span>
+<span class="fc bfc" id="L220" title="All 2 branches covered.">    for (Snack i : purchaseList.keySet()) {</span>
+<span class="fc" id="L221">      total += i.getPrice() * purchaseList.get(i);</span>
+<span class="fc" id="L222">    }</span>
+<span class="fc" id="L223">    return total;</span>
   }
 
   /// resets the purchase list between customers.
   public void resetPurchase() {
-<span class="nc" id="L219">    purchaseList = new HashMap&lt;&gt;();</span>
-<span class="nc" id="L220">  }</span>
+<span class="nc" id="L228">    purchaseList = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L229">  }</span>
 
   /// fills the quantity of snacks at 10 per item, vending machine starts off filled.
   public void fill() {
-<span class="fc" id="L224">    stock.put(&quot;BBQChips&quot;, 10);</span>
-<span class="fc" id="L225">    stock.put(&quot;Jellybeans&quot;, 10);</span>
-<span class="fc" id="L226">    stock.put(&quot;Juice&quot;, 10);</span>
-<span class="fc" id="L227">    stock.put(&quot;Lollies&quot;, 10);</span>
-<span class="fc" id="L228">    stock.put(&quot;Mars&quot;, 10);</span>
-<span class="fc" id="L229">    stock.put(&quot;OriginalChips&quot;, 10);</span>
-<span class="fc" id="L230">    stock.put(&quot;Sneakers&quot;, 10);</span>
-<span class="fc" id="L231">    stock.put(&quot;Sourworms&quot;, 10);</span>
-<span class="fc" id="L232">    stock.put(&quot;Water&quot;, 10);</span>
-<span class="fc" id="L233">  }</span>
+<span class="fc" id="L233">    stock.put(&quot;BBQChips&quot;, 10);</span>
+<span class="fc" id="L234">    stock.put(&quot;Jellybeans&quot;, 10);</span>
+<span class="fc" id="L235">    stock.put(&quot;Juice&quot;, 10);</span>
+<span class="fc" id="L236">    stock.put(&quot;Lollies&quot;, 10);</span>
+<span class="fc" id="L237">    stock.put(&quot;Mars&quot;, 10);</span>
+<span class="fc" id="L238">    stock.put(&quot;OriginalChips&quot;, 10);</span>
+<span class="fc" id="L239">    stock.put(&quot;Sneakers&quot;, 10);</span>
+<span class="fc" id="L240">    stock.put(&quot;Sourworms&quot;, 10);</span>
+<span class="fc" id="L241">    stock.put(&quot;Water&quot;, 10);</span>
+<span class="fc" id="L242">  }</span>
 
   // shows the amount of each item left in vending machine.
   public void showStock() {
-<span class="fc bfc" id="L237" title="All 2 branches covered.">    for (Entry&lt;String, Integer&gt; i : stock.entrySet()) {</span>
-<span class="fc" id="L238">      String s = i.getKey();</span>
-<span class="fc" id="L239">      int quantity = i.getValue();</span>
-<span class="fc" id="L240">      System.out.println(&quot;Product: &quot; + s + &quot;\t\t\tquantity: &quot; + quantity);</span>
-<span class="fc" id="L241">    }</span>
-<span class="fc" id="L242">  }</span>
+<span class="fc bfc" id="L246" title="All 2 branches covered.">    for (Entry&lt;String, Integer&gt; i : stock.entrySet()) {</span>
+<span class="fc" id="L247">      String s = i.getKey();</span>
+<span class="fc" id="L248">      int quantity = i.getValue();</span>
+<span class="fc" id="L249">      System.out.println(&quot;Product: &quot; + s + &quot;\t\t\tquantity: &quot; + quantity);</span>
+<span class="fc" id="L250">    }</span>
+<span class="fc" id="L251">  }</span>
 
   public HashMap&lt;String, Integer&gt; getStock() {
-<span class="fc" id="L245">    return this.stock;</span>
+<span class="fc" id="L254">    return this.stock;</span>
   }
 
 
   //prints the purchase list to menu.
   public void printPurchaseList() {
-<span class="fc" id="L251">    System.out.println(&quot;Purchase list:&quot;);</span>
-<span class="fc bfc" id="L252" title="All 2 branches covered.">    for (Map.Entry&lt;Snack, Integer&gt; set : purchaseList.entrySet()) {</span>
-<span class="fc" id="L253">      String name = set.getKey().getName();</span>
-<span class="fc" id="L254">      int amount = set.getValue();</span>
-<span class="fc" id="L255">      System.out.printf(&quot;%40s %20s %n&quot;, name, Integer.toString(amount));</span>
-<span class="fc" id="L256">    }</span>
-<span class="fc" id="L257">  }</span>
+<span class="fc" id="L260">    System.out.println(&quot;Purchase list:&quot;);</span>
+<span class="fc bfc" id="L261" title="All 2 branches covered.">    for (Map.Entry&lt;Snack, Integer&gt; set : purchaseList.entrySet()) {</span>
+<span class="fc" id="L262">      String name = set.getKey().getName();</span>
+<span class="fc" id="L263">      int amount = set.getValue();</span>
+<span class="fc" id="L264">      System.out.printf(&quot;%40s %20s %n&quot;, name, Integer.toString(amount));</span>
+<span class="fc" id="L265">    }</span>
+<span class="fc" id="L266">  }</span>
 
   public HashMap&lt;Snack, Integer&gt; getPurchaseList() {
-<span class="fc" id="L260">    return this.purchaseList;</span>
+<span class="fc" id="L269">    return this.purchaseList;</span>
   }
 
   public void setPurchaseList(HashMap&lt;Snack, Integer&gt; purchaseList) {
-<span class="nc" id="L264">    this.purchaseList = purchaseList;</span>
-<span class="nc" id="L265">  }</span>
+<span class="nc" id="L273">    this.purchaseList = purchaseList;</span>
+<span class="nc" id="L274">  }</span>
 
   public void PrintStock(){
-<span class="fc" id="L268">    System.out.println(this.stock);</span>
-<span class="fc" id="L269">  }</span>
+<span class="fc" id="L277">    System.out.println(this.stock);</span>
+<span class="fc" id="L278">  }</span>
 
 
 }
