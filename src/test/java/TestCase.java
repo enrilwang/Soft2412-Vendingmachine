@@ -372,5 +372,29 @@ public class TestCase {
                 "How much do you want to set\n" +
                 "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
     }
+    @Test
+    public void TestStartMenu(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        test.StartMenu();
+        Assert.assertEquals("               BBQChips - Name: BBQChips           Price:$2.5               Code:1 \n" +
+                "           Jellybeans - Name: Jellybeans           Price:$2.2               Code:2 \n" +
+                "                     Juice - Name: Juice           Price:$3.2               Code:3 \n" +
+                "                 Lollies - Name: Lollies           Price:$1.5               Code:4 \n" +
+                "                       Mars - Name: Mars           Price:$3.0               Code:5 \n" +
+                "     OriginalChips - Name: OriginalChips           Price:$3.2               Code:6 \n" +
+                "               Sneakers - Name: Sneakers           Price:$3.5               Code:7 \n" +
+                "             SourWorms - Name: SourWorms           Price:$2.0               Code:8 \n" +
+                "                     Water - Name: Water           Price:$4.5               Code:9 \n" +
+                "\n" +
+                "At any point during the purchase, type cancel to cancel transaction.\n" +
+                "\n" +
+                "Please input the product name or code of snack you wish to purchase.\n" +
+                "\n" +
+                "If you are a staff, please type 11 \n" +
+                "\n" +
+                "If you want to see stock, please type 12 \n",out.toString());
 
+    }
 }

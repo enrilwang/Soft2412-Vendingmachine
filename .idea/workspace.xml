@@ -14,14 +14,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/VendingMachine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/sss-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/sss-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/index.html" afterDir="false" />
@@ -32,9 +32,9 @@
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestCase.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestCase.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

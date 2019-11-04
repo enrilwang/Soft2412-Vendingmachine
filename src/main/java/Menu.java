@@ -49,23 +49,7 @@ public class Menu {
     vendingMachine.showStock();
     vendingMachine.resetPurchase();
     while(true){
-      System.out.printf("%40s %20s %20s %n","BBQChips - Name: BBQChips","Price:$"+ bbq.getPrice() ,"Code:1");
-      System.out.printf("%40s %20s %20s %n","Jellybeans - Name: Jellybeans","Price:$"+jelly.getPrice(), "Code:2");
-      System.out.printf("%40s %20s %20s %n","Juice - Name: Juice", "Price:$"+juice.getPrice(), "Code:3");
-      System.out.printf("%40s %20s %20s %n","Lollies - Name: Lollies","Price:$"+lollies.getPrice(), "Code:4");
-      System.out.printf("%40s %20s %20s %n","Mars - Name: Mars","Price:$"+mars.getPrice(), "Code:5");
-      System.out.printf("%40s %20s %20s %n","OriginalChips - Name: OriginalChips", "Price:$"+ochip.getPrice(),"Code:6");
-      System.out.printf("%40s %20s %20s %n","Sneakers - Name: Sneakers","Price:$"+sneakers.getPrice(), "Code:7");
-      System.out.printf("%40s %20s %20s %n","SourWorms - Name: SourWorms","Price:$"+sourWorms.getPrice(), "Code:8");
-      System.out.printf("%40s %20s %20s %n","Water - Name: Water", "Price:$"+water.getPrice(),"Code:9");
-
-      System.out.println("\nAt any point during the purchase, type cancel to cancel transaction.");
-
-      System.out.println("\nPlease input the product name or code of snack you wish to purchase.");
-
-      System.out.println("\nIf you are a staff, please type 11 ");
-
-      System.out.println("\nIf you want to see stock, please type 12 ");
+      vendingMachine.StartMenu();
       //ask customer what items they want to buy.
       while(true){
 
