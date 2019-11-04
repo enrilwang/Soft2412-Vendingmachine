@@ -42,6 +42,7 @@ public class VendingMachine<purchaseList> {
                   + " "
                   + snack
                   + " left in the vending machine.");
+          return false;
         }
         return true;
       }
