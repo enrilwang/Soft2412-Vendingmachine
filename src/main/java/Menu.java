@@ -98,79 +98,91 @@ public class Menu {
         }
         if (input.equals("11")) {
           if (staff.ValidStaff()) {
-            changePrice();
+            while(true) {
+              System.out.println(
+                  "Do you want to change the price, 0 for yes, 1 for add volume, any other number for quit");
+              String inn = scan.nextLine();
+              if(inn.equals("0")) {
+                changePrice();
+              }
+              else if(inn.equals("1")){
+                addVolume();
+              }else {
+                start();
+              }
+            }
 
-            start();
-          } else {
-            System.out.println("\nYou are not staff\n");
-            start();
-          }
-
-        }
-        System.out.println("Please input the quantity you wish to purchase.");
-        String quantity = scan.nextLine();
-        cancelCheck(quantity);
-        if (!vendingMachine.buy(input, Integer.parseInt(quantity))) {
-          System.out
-              .println("\nPlease input the product name or code of snack you wish to purchase.");
-          continue;
-        }
-        System.out.println("Do you want to add another item? Type 0 for yes, 1 for no");
-        String s = scan.nextLine();
-        cancelCheck(s);
-        if (s.equals("1")) {
-          break;
-        }
-        System.out.println("Please input the product name or code of snack you wish to purchase.");
-      }
-
-      //ask customer to pay. If paying with cents, divide double by 100.
-
-      double price = Double
-          .parseDouble(new DecimalFormat("#.##").format(vendingMachine.getTotalPrice()));
-      vendingMachine.printPurchaseList();
-      System.out.println("\n\nThe total price is $" + String.format("%.2f", price));
-      System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
-      System.out.println(
-          "You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
-      System.out.println("To cancel transaction, type in cancel.");
-      //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
-      double totalPaid = 0.0;
-      while (scan.hasNext()) {
-        String input = scan.nextLine();
-        if (input.length() == 3) {
-          double amountPaid = Double.parseDouble(input.substring(0, 2));
-          totalPaid += amountPaid / 100;
-        } else if (input.length() == 2 || input.length() == 1) {
-          double amountPaid = Double.parseDouble(input);
-          totalPaid += amountPaid;
-        } else if (input.toLowerCase().equals("cancel")) {
-          System.out.println("Here is your money back.\n\n\nNext customer.");
-          start();
         } else {
-          System.out.println("You have to pay with currency values listed above.");
-        }
-        DecimalFormat rounding = new DecimalFormat("#.00");
-        double remainingAmount = Double.parseDouble(rounding.format(price - totalPaid));
-        System.out.println("The remaining amount to be paid is: $" + remainingAmount);
-        if (remainingAmount == 0.0) {
-          System.out.println("Finished paying. Enjoy your snack.");
-          vendingMachine.successfulBuy();
-          System.out.println("\n\nNext customer.");
+          System.out.println("\nYou are not staff\n");
           start();
         }
-        if (remainingAmount < 0.0) {
-          System.out.println(
-              "Purchase successful. Here is your change of $" + Math.abs(remainingAmount)
-                  + " back.");
-          vendingMachine.successfulBuy();
-          System.out.println("\n\nNext customer.");
-          start();
-        }
-      }
 
+      }
+      System.out.println("Please input the quantity you wish to purchase.");
+      String quantity = scan.nextLine();
+      cancelCheck(quantity);
+      if (!vendingMachine.buy(input, Integer.parseInt(quantity))) {
+        System.out
+            .println("\nPlease input the product name or code of snack you wish to purchase.");
+        continue;
+      }
+      System.out.println("Do you want to add another item? Type 0 for yes, 1 for no");
+      String s = scan.nextLine();
+      cancelCheck(s);
+      if (s.equals("1")) {
+        break;
+      }
+      System.out.println("Please input the product name or code of snack you wish to purchase.");
     }
+
+    //ask customer to pay. If paying with cents, divide double by 100.
+
+    double price = Double
+        .parseDouble(new DecimalFormat("#.##").format(vendingMachine.getTotalPrice()));
+    vendingMachine.printPurchaseList();
+    System.out.println("\n\nThe total price is $" + String.format("%.2f", price));
+    System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
+    System.out.println(
+        "You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
+    System.out.println("To cancel transaction, type in cancel.");
+    //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
+    double totalPaid = 0.0;
+    while (scan.hasNext()) {
+      String input = scan.nextLine();
+      if (input.length() == 3) {
+        double amountPaid = Double.parseDouble(input.substring(0, 2));
+        totalPaid += amountPaid / 100;
+      } else if (input.length() == 2 || input.length() == 1) {
+        double amountPaid = Double.parseDouble(input);
+        totalPaid += amountPaid;
+      } else if (input.toLowerCase().equals("cancel")) {
+
+        System.out.println("Here is your money back.\n\n\nNext customer.");
+        start();
+      } else {
+        System.out.println("You have to pay with currency values listed above.");
+      }
+      DecimalFormat rounding = new DecimalFormat("#.00");
+      double remainingAmount = Double.parseDouble(rounding.format(price - totalPaid));
+      System.out.println("The remaining amount to be paid is: $" + remainingAmount);
+      if (remainingAmount == 0.0) {
+        System.out.println("Finished paying. Enjoy your snack.");
+        vendingMachine.successfulBuy();
+        System.out.println("\n\nNext customer.");
+        start();
+      }
+      if (remainingAmount < 0.0) {
+        System.out.println(
+            "Purchase successful. Here is your change of $" + Math.abs(remainingAmount)
+                + " back.");
+        vendingMachine.successfulBuy();
+        System.out.println("\n\nNext customer.");
+        start();
+      }
+    }
+
   }
+}
 
   //each input is checked to see if it is cancel, if so, move on to next customer (call start()).
   private void cancelCheck(String input) {
@@ -183,16 +195,7 @@ public class Menu {
 
   public void changePrice() {
     Scanner scan = new Scanner(System.in);
-    while (true) {
-      System.out.println(
-          "Do you want to change the price, 0 for yes, 1 for add volume, any other number for quit");
 
-      addVolume();
-
-
-
-      String in = scan.nextLine();
-      if (in.equals("0")) {
         System.out.println("which one do you want to change price, type Code");
         String input = scan.nextLine();
         if (input.equals("1")) {
@@ -249,11 +252,9 @@ public class Menu {
           double value = Double.valueOf(input1.toString());
           water.setPrice(value);
 
-        } else {
-          break;
         }
-      }
-    }
+
+
 
   }
 
@@ -261,9 +262,7 @@ public class Menu {
 
     Scanner sca = new Scanner(System.in);
 
-    String i = sca.nextLine();
 
-    if (i.equals("1")) {
       System.out.println("which one do you want to add volume, type Code");
       String input = sca.nextLine();
       if (input.equals("1")) {
@@ -358,20 +357,7 @@ public class Menu {
         vendingMachine.PrintStock();
       }
 
-      System.out.println("Do you want to add other volume, type 0 continue, type any number to quit");
-      String come = sca.nextLine();
-
-
-      if(come.equals("0")){
-        changePrice();
-      }else{
-        start();
-      }
-    }else{
-
-      start();
-
     }
-  }
+
 
 }
