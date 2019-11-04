@@ -46,7 +46,7 @@ public class Menu {
   public void start(){
 
     Scanner scan = new Scanner(System.in);
-//    vendingMachine.showStock();
+    vendingMachine.showStock();
     vendingMachine.resetPurchase();
     while(true){
       System.out.printf("%40s %20s %20s %n","BBQChips - Name: BBQChips","Price:$"+ bbq.getPrice() ,"Code:1");
@@ -88,7 +88,7 @@ public class Menu {
 
             start();
           }else{
-            System.out.println("\nyou are not staff\n");
+            System.out.println("\nYou are not staff\n");
             start();
           }
 
@@ -162,12 +162,10 @@ public class Menu {
   }
 
 
-
-
   public void changePrice() {
     Scanner scan = new Scanner(System.in);
     while (true) {
-      System.out.println("Are you want to change other price, 0 for yes, any number for quit");
+      System.out.println("Do you want to change the price, 0 for yes, any number for quit");
 
       String in = scan.nextLine();
       if (in.equals("0")) {
@@ -226,6 +224,7 @@ public class Menu {
           String input1 = scan.nextLine();
           double value = Double.valueOf(input1.toString());
           water.setPrice(value);
+
         }
       }
       else{

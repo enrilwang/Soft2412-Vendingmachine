@@ -1,104 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Menu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sss</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Menu.java</span></div><h1>Menu.java</h1><pre class="source lang-java linenums">import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
+import snacks.BBQChips;
+import snacks.Jellybeans;
+import snacks.Juice;
+import snacks.Lollies;
+import snacks.Mars;
+import snacks.OriginalChips;
+import snacks.Snack;
+import snacks.Sneakers;
+import snacks.SourWorms;
+import snacks.Water;
 
 
 public class Menu {
   private VendingMachine vendingMachine;
+  private Staff staff;
+  private BBQChips bbq;
+  private Jellybeans jelly;
+  private Juice juice;
+  private Lollies lollies;
+  private Mars mars;
+  private OriginalChips ochip;
+  private Sneakers sneakers;
+  private SourWorms sourWorms;
+  private Water water;
 
-<span class="nc" id="L8">  public Menu(){</span>
-<span class="nc" id="L9">    vendingMachine=new VendingMachine();</span>
-<span class="nc" id="L10">    start();</span>
-<span class="nc" id="L11">  }</span>
+
+<span class="nc" id="L30">  public Menu(){</span>
+<span class="nc" id="L31">    vendingMachine = new VendingMachine();</span>
+<span class="nc" id="L32">    staff = new Staff();</span>
+<span class="nc" id="L33">    bbq = new BBQChips();</span>
+<span class="nc" id="L34">    jelly = new Jellybeans();</span>
+<span class="nc" id="L35">    juice = new Juice();</span>
+<span class="nc" id="L36">    lollies = new Lollies();</span>
+<span class="nc" id="L37">    mars = new Mars();</span>
+<span class="nc" id="L38">    ochip = new OriginalChips();</span>
+<span class="nc" id="L39">    sneakers = new Sneakers();</span>
+<span class="nc" id="L40">    sourWorms = new SourWorms();</span>
+<span class="nc" id="L41">    water = new Water();</span>
+
+<span class="nc" id="L43">    start();</span>
+<span class="nc" id="L44">  }</span>
 
   public void start(){
-<span class="nc" id="L14">    Scanner scan = new Scanner(System.in);</span>
-//    vendingMachine.showStock();
-<span class="nc" id="L16">    vendingMachine.resetPurchase();</span>
+
+<span class="nc" id="L48">    Scanner scan = new Scanner(System.in);</span>
+<span class="nc" id="L49">    vendingMachine.showStock();</span>
+<span class="nc" id="L50">    vendingMachine.resetPurchase();</span>
     while(true){
-<span class="nc" id="L18">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;BBQChips - Name: BBQChips&quot;, &quot;Code:1&quot;, &quot;Price:$2.5&quot;);</span>
-<span class="nc" id="L19">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;Jellybeans - Name: Jellybeans&quot;, &quot;Code:2&quot;, &quot;Price:$2.2&quot;);</span>
-<span class="nc" id="L20">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;Juice - Name: Juice&quot;, &quot;Code:3&quot;, &quot;Price:$3.2&quot;);</span>
-<span class="nc" id="L21">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;Lollies - Name: Lollies&quot;, &quot;Code:4&quot;, &quot;Price:$1.5&quot;);</span>
-<span class="nc" id="L22">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;Mars - Name: Mars&quot;, &quot;Code:5&quot;, &quot;Price:$3.0&quot;);</span>
-<span class="nc" id="L23">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;OriginalChips - Name: OriginalChips&quot;, &quot;Code:6&quot;, &quot;Price:$3.2&quot;);</span>
-<span class="nc" id="L24">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;Sneakers - Name: Sneakers&quot;, &quot;Code:7&quot;, &quot;Price:$3.5&quot;);</span>
-<span class="nc" id="L25">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;SourWorms - Name: SourWorms&quot;, &quot;Code:8&quot;, &quot;Price:$2.0&quot;);</span>
-<span class="nc" id="L26">      System.out.printf(&quot;%40s %20s %20s,%n&quot;,&quot;Water - Name: Water&quot;, &quot;Code:9&quot;, &quot;Price:$4.5&quot;);</span>
+<span class="nc" id="L52">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;BBQChips - Name: BBQChips&quot;,&quot;Price:$&quot;+ bbq.getPrice() ,&quot;Code:1&quot;);</span>
+<span class="nc" id="L53">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Jellybeans - Name: Jellybeans&quot;,&quot;Price:$&quot;+jelly.getPrice(), &quot;Code:2&quot;);</span>
+<span class="nc" id="L54">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Juice - Name: Juice&quot;, &quot;Price:$&quot;+juice.getPrice(), &quot;Code:3&quot;);</span>
+<span class="nc" id="L55">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Lollies - Name: Lollies&quot;,&quot;Price:$&quot;+lollies.getPrice(), &quot;Code:4&quot;);</span>
+<span class="nc" id="L56">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Mars - Name: Mars&quot;,&quot;Price:$&quot;+mars.getPrice(), &quot;Code:5&quot;);</span>
+<span class="nc" id="L57">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;OriginalChips - Name: OriginalChips&quot;, &quot;Price:$&quot;+ochip.getPrice(),&quot;Code:6&quot;);</span>
+<span class="nc" id="L58">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Sneakers - Name: Sneakers&quot;,&quot;Price:$&quot;+sneakers.getPrice(), &quot;Code:7&quot;);</span>
+<span class="nc" id="L59">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;SourWorms - Name: SourWorms&quot;,&quot;Price:$&quot;+sourWorms.getPrice(), &quot;Code:8&quot;);</span>
+<span class="nc" id="L60">      System.out.printf(&quot;%40s %20s %20s %n&quot;,&quot;Water - Name: Water&quot;, &quot;Price:$&quot;+water.getPrice(),&quot;Code:9&quot;);</span>
 
-<span class="nc" id="L28">      System.out.println(&quot;\nAt any point during the purchase, type cancel to cancel transaction.&quot;);</span>
+<span class="nc" id="L62">      System.out.println(&quot;\nAt any point during the purchase, type cancel to cancel transaction.&quot;);</span>
 
-<span class="nc" id="L30">      System.out.println(&quot;\nPlease input the product name or code of snack you wish to purchase.&quot;);</span>
+<span class="nc" id="L64">      System.out.println(&quot;\nPlease input the product name or code of snack you wish to purchase.&quot;);</span>
 
+<span class="nc" id="L66">      System.out.println(&quot;\nIf you are a staff, please type 11 &quot;);</span>
+
+<span class="nc" id="L68">      System.out.println(&quot;\nIf you want to see stock, please type 12 &quot;);</span>
       //ask customer what items they want to buy.
       while(true){
-<span class="nc" id="L34">        String input = scan.nextLine();</span>
-<span class="nc" id="L35">        cancelCheck(input);</span>
-<span class="nc" id="L36">        System.out.println(&quot;Please input the quantity you wish to purchase.&quot;);</span>
-<span class="nc" id="L37">        String quantity = scan.nextLine();</span>
-<span class="nc" id="L38">        cancelCheck(quantity);</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">        if(!vendingMachine.buy(input, Integer.parseInt(quantity))){</span>
-<span class="nc" id="L40">          System.out.println(&quot;\nPlease input the product name or code of snack you wish to purchase.&quot;);</span>
-<span class="nc" id="L41">          continue;</span>
+
+<span class="nc" id="L72">        String input = scan.nextLine();</span>
+<span class="nc" id="L73">        cancelCheck(input);</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if(input.equals(&quot;12&quot;)){</span>
+<span class="nc" id="L75">          vendingMachine.PrintStock();</span>
+<span class="nc" id="L76">          System.out.println(&quot;continue buy ? type 0 to continue, 1 for cancel&quot;);</span>
+<span class="nc" id="L77">          String in = scan.nextLine();</span>
+
+<span class="nc bnc" id="L79" title="All 2 branches missed.">          if(in.equals(&quot;0&quot;)){</span>
+<span class="nc" id="L80">            start();</span>
+          }else{
+<span class="nc" id="L82">            cancelCheck(&quot;cancel&quot;);</span>
+          }
         }
-<span class="nc" id="L43">        System.out.println(&quot;Do you want to add another item? Type 0 for yes, 1 for no&quot;);</span>
-<span class="nc" id="L44">        String s = scan.nextLine();</span>
-<span class="nc" id="L45">        cancelCheck(s);</span>
-<span class="nc bnc" id="L46" title="All 2 branches missed.">        if(s.equals(&quot;1&quot;)){</span>
-<span class="nc" id="L47">          break;</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if(input.equals(&quot;11&quot;)){</span>
+<span class="nc bnc" id="L86" title="All 2 branches missed.">          if(staff.ValidStaff()){</span>
+<span class="nc" id="L87">            changePrice();</span>
+
+<span class="nc" id="L89">            start();</span>
+          }else{
+<span class="nc" id="L91">            System.out.println(&quot;\nYou are not staff\n&quot;);</span>
+<span class="nc" id="L92">            start();</span>
+          }
+
         }
-<span class="nc" id="L49">        System.out.println(&quot;Please input the product name or code of snack you wish to purchase.&quot;);</span>
-<span class="nc" id="L50">      }</span>
+<span class="nc" id="L96">        System.out.println(&quot;Please input the quantity you wish to purchase.&quot;);</span>
+<span class="nc" id="L97">        String quantity = scan.nextLine();</span>
+<span class="nc" id="L98">        cancelCheck(quantity);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">        if(!vendingMachine.buy(input, Integer.parseInt(quantity))){</span>
+<span class="nc" id="L100">          System.out.println(&quot;\nPlease input the product name or code of snack you wish to purchase.&quot;);</span>
+<span class="nc" id="L101">          continue;</span>
+        }
+<span class="nc" id="L103">        System.out.println(&quot;Do you want to add another item? Type 0 for yes, 1 for no&quot;);</span>
+<span class="nc" id="L104">        String s = scan.nextLine();</span>
+<span class="nc" id="L105">        cancelCheck(s);</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        if(s.equals(&quot;1&quot;)){</span>
+<span class="nc" id="L107">          break;</span>
+        }
+<span class="nc" id="L109">        System.out.println(&quot;Please input the product name or code of snack you wish to purchase.&quot;);</span>
+<span class="nc" id="L110">      }</span>
 
       //ask customer to pay. If paying with cents, divide double by 100.
-<span class="nc" id="L53">      double price=Double.parseDouble(new DecimalFormat(&quot;#.##&quot;).format(vendingMachine.getTotalPrice()));</span>
-<span class="nc" id="L54">      vendingMachine.printPurchaseList();</span>
-<span class="nc" id="L55">      System.out.println(&quot;\n\nThe total price is $&quot;+String.format(&quot;%.2f&quot;,price));</span>
-<span class="nc" id="L56">      System.out.println(&quot;Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)&quot;);</span>
-<span class="nc" id="L57">      System.out.println(&quot;You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.&quot;);</span>
-<span class="nc" id="L58">      System.out.println(&quot;To cancel transaction, type in cancel.&quot;);</span>
-      //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
-<span class="nc" id="L60">      double totalPaid=0.0;</span>
-<span class="nc bnc" id="L61" title="All 2 branches missed.">      while(scan.hasNext()){</span>
-<span class="nc" id="L62">        String input = scan.nextLine();</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">        if(input.length()==3){</span>
-<span class="nc" id="L64">          double amountPaid=Double.parseDouble(input.substring(0,2));</span>
-<span class="nc" id="L65">          totalPaid+=amountPaid/100;</span>
-<span class="nc bnc" id="L66" title="All 4 branches missed.">        }else if(input.length()==2 ||input.length()==1){</span>
-<span class="nc" id="L67">          double amountPaid=Double.parseDouble(input);</span>
-<span class="nc" id="L68">          totalPaid+=amountPaid;</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">        }else if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
-<span class="nc" id="L70">          System.out.println(&quot;Here is your money back.\n\n\nNext customer.&quot;);</span>
-<span class="nc" id="L71">          start();</span>
-        }else{
-<span class="nc" id="L73">          System.out.println(&quot;You have to pay with currency values listed above.&quot;);</span>
-        }
-<span class="nc" id="L75">        DecimalFormat rounding=new DecimalFormat(&quot;#.00&quot;);</span>
-<span class="nc" id="L76">        double remainingAmount=Double.parseDouble(rounding.format(price-totalPaid));</span>
-<span class="nc" id="L77">        System.out.println(&quot;The remaining amount to be paid is: $&quot;+remainingAmount);</span>
-<span class="nc bnc" id="L78" title="All 2 branches missed.">        if(remainingAmount==0.0){</span>
-<span class="nc" id="L79">          System.out.println(&quot;Finished paying. Enjoy your snack.&quot;);</span>
-<span class="nc" id="L80">          vendingMachine.successfulBuy();</span>
-<span class="nc" id="L81">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
-<span class="nc" id="L82">          start();</span>
-        }
-<span class="nc bnc" id="L84" title="All 2 branches missed.">        if(remainingAmount&lt;0.0){</span>
-<span class="nc" id="L85">          System.out.println(&quot;Purchase successful. Here is your change of $&quot;+Math.abs(remainingAmount)+&quot; back.&quot;);</span>
-<span class="nc" id="L86">          vendingMachine.successfulBuy();</span>
-<span class="nc" id="L87">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
-<span class="nc" id="L88">          start();</span>
-        }
-<span class="nc" id="L90">      }</span>
 
-<span class="nc" id="L92">    }</span>
+<span class="nc" id="L114">      double price=Double.parseDouble(new DecimalFormat(&quot;#.##&quot;).format(vendingMachine.getTotalPrice()));</span>
+<span class="nc" id="L115">      vendingMachine.printPurchaseList();</span>
+<span class="nc" id="L116">      System.out.println(&quot;\n\nThe total price is $&quot;+String.format(&quot;%.2f&quot;,price));</span>
+<span class="nc" id="L117">      System.out.println(&quot;Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)&quot;);</span>
+<span class="nc" id="L118">      System.out.println(&quot;You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.&quot;);</span>
+<span class="nc" id="L119">      System.out.println(&quot;To cancel transaction, type in cancel.&quot;);</span>
+      //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
+<span class="nc" id="L121">      double totalPaid=0.0;</span>
+<span class="nc bnc" id="L122" title="All 2 branches missed.">      while(scan.hasNext()){</span>
+<span class="nc" id="L123">        String input = scan.nextLine();</span>
+<span class="nc bnc" id="L124" title="All 2 branches missed.">        if(input.length()==3){</span>
+<span class="nc" id="L125">          double amountPaid=Double.parseDouble(input.substring(0,2));</span>
+<span class="nc" id="L126">          totalPaid+=amountPaid/100;</span>
+<span class="nc bnc" id="L127" title="All 4 branches missed.">        }else if(input.length()==2 ||input.length()==1){</span>
+<span class="nc" id="L128">          double amountPaid=Double.parseDouble(input);</span>
+<span class="nc" id="L129">          totalPaid+=amountPaid;</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">        }else if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
+<span class="nc" id="L131">          System.out.println(&quot;Here is your money back.\n\n\nNext customer.&quot;);</span>
+<span class="nc" id="L132">          start();</span>
+        }else{
+<span class="nc" id="L134">          System.out.println(&quot;You have to pay with currency values listed above.&quot;);</span>
+        }
+<span class="nc" id="L136">        DecimalFormat rounding=new DecimalFormat(&quot;#.00&quot;);</span>
+<span class="nc" id="L137">        double remainingAmount=Double.parseDouble(rounding.format(price-totalPaid));</span>
+<span class="nc" id="L138">        System.out.println(&quot;The remaining amount to be paid is: $&quot;+remainingAmount);</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">        if(remainingAmount==0.0){</span>
+<span class="nc" id="L140">          System.out.println(&quot;Finished paying. Enjoy your snack.&quot;);</span>
+<span class="nc" id="L141">          vendingMachine.successfulBuy();</span>
+<span class="nc" id="L142">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
+<span class="nc" id="L143">          start();</span>
+        }
+<span class="nc bnc" id="L145" title="All 2 branches missed.">        if(remainingAmount&lt;0.0){</span>
+<span class="nc" id="L146">          System.out.println(&quot;Purchase successful. Here is your change of $&quot;+Math.abs(remainingAmount)+&quot; back.&quot;);</span>
+<span class="nc" id="L147">          vendingMachine.successfulBuy();</span>
+<span class="nc" id="L148">          System.out.println(&quot;\n\nNext customer.&quot;);</span>
+<span class="nc" id="L149">          start();</span>
+        }
+<span class="nc" id="L151">      }</span>
+
+<span class="nc" id="L153">    }</span>
   }
 
   //each input is checked to see if it is cancel, if so, move on to next customer (call start()).
   private void cancelCheck(String input){
-<span class="nc bnc" id="L97" title="All 2 branches missed.">    if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
-<span class="nc" id="L98">      System.out.println(&quot;\n\nNext customer.&quot;);</span>
-<span class="nc" id="L99">      start();</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">    if(input.toLowerCase().equals(&quot;cancel&quot;)){</span>
+<span class="nc" id="L159">      System.out.println(&quot;\n\nNext customer.&quot;);</span>
+<span class="nc" id="L160">      start();</span>
     }
-<span class="nc" id="L101">  }</span>
+<span class="nc" id="L162">  }</span>
+
+
+  public void changePrice() {
+<span class="nc" id="L166">    Scanner scan = new Scanner(System.in);</span>
+    while (true) {
+<span class="nc" id="L168">      System.out.println(&quot;Do you want to change the price, 0 for yes, any number for quit&quot;);</span>
+
+<span class="nc" id="L170">      String in = scan.nextLine();</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">      if (in.equals(&quot;0&quot;)) {</span>
+<span class="nc" id="L172">        System.out.println(&quot;which one do you want to change price, type Code&quot;);</span>
+<span class="nc" id="L173">        String input = scan.nextLine();</span>
+<span class="nc bnc" id="L174" title="All 2 branches missed.">        if (input.equals(&quot;1&quot;)) {</span>
+<span class="nc" id="L175">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L176">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L177">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L179">          bbq.setPrice(value);</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">        } else if (input.equals(&quot;2&quot;)) {</span>
+<span class="nc" id="L181">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L182">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L183">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L185">          jelly.setPrice(value);</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">        } else if (input.equals(&quot;3&quot;)) {</span>
+<span class="nc" id="L187">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L188">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L189">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L191">          juice.setPrice(value);</span>
+<span class="nc bnc" id="L192" title="All 2 branches missed.">        } else if (input.equals(&quot;4&quot;)) {</span>
+<span class="nc" id="L193">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L194">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L195">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L197">          lollies.setPrice(value);</span>
+<span class="nc bnc" id="L198" title="All 2 branches missed.">        } else if (input.equals(&quot;5&quot;)) {</span>
+<span class="nc" id="L199">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L200">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L201">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L203">          mars.setPrice(value);</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">        } else if (input.equals(&quot;6&quot;)) {</span>
+<span class="nc" id="L205">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L206">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L207">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L209">          ochip.setPrice(value);</span>
+<span class="nc bnc" id="L210" title="All 2 branches missed.">        } else if (input.equals(&quot;7&quot;)) {</span>
+<span class="nc" id="L211">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L212">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L213">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L215">          sneakers.setPrice(value);</span>
+<span class="nc bnc" id="L216" title="All 2 branches missed.">        } else if (input.equals(&quot;8&quot;)) {</span>
+<span class="nc" id="L217">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L218">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L219">          double value = Double.valueOf(input1.toString());</span>
+
+<span class="nc" id="L221">          sourWorms.setPrice(value);</span>
+<span class="nc bnc" id="L222" title="All 2 branches missed.">        } else if (input.equals(&quot;9&quot;)) {</span>
+<span class="nc" id="L223">          System.out.println(&quot;How much do you want to set&quot;);</span>
+<span class="nc" id="L224">          String input1 = scan.nextLine();</span>
+<span class="nc" id="L225">          double value = Double.valueOf(input1.toString());</span>
+<span class="nc" id="L226">          water.setPrice(value);</span>
+
+        }
+      }
+      else{
+        break;
+      }
+<span class="nc" id="L233">    }</span>
+
+<span class="nc" id="L235">  }</span>
+
+
+
+
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

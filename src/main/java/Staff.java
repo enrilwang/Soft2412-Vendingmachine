@@ -5,11 +5,11 @@ import snacks.Snack;
 
 public class Staff {
   private int staffID;
-  private int passward;
+  private int password;
 
   public Staff(){
     this.staffID = 1;
-    this.passward = 0000;
+    this.password = 0000;
 
   }
 

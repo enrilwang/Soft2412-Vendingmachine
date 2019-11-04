@@ -5,6 +5,7 @@ import snacks.*;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.hamcrest.CoreMatchers.both;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -144,24 +145,24 @@ public class TestCase {
     @Test
     public void TestBuy() {
         VendingMachine test = new VendingMachine();
-        test.buy("1",2 );
-        test.buy("2",1 );
-        test.buy("3",1 );
-        test.buy("4",1 );
-        test.buy("5",1 );
-        test.buy("6",1 );
-        test.buy("7",1 );
-        test.buy("8",1 );
-        test.buy("9",1 );
-        test.buy("BBQChips",1 );
-        test.buy("Jellybeans",1 );
-        test.buy("Juice",1 );
-        test.buy("Lollies",1 );
-        test.buy("Mars",1 );
-        test.buy("OriginalChips",1 );
-        test.buy("Sneakers",1 );
-        test.buy("Sourworms",1 );
-        test.buy("Water",1 );
+        test.buy("1", 2);
+        test.buy("2", 1);
+        test.buy("3", 1);
+        test.buy("4", 1);
+        test.buy("5", 1);
+        test.buy("6", 1);
+        test.buy("7", 1);
+        test.buy("8", 1);
+        test.buy("9", 1);
+        test.buy("BBQChips", 1);
+        test.buy("Jellybeans", 1);
+        test.buy("Juice", 1);
+        test.buy("Lollies", 1);
+        test.buy("Mars", 1);
+        test.buy("OriginalChips", 1);
+        test.buy("Sneakers", 1);
+        test.buy("Sourworms", 1);
+        test.buy("Water", 1);
 //        Map<String, Integer> map = new HashMap<>();
 //        map.put("BBQChips", 2);
 //        map.put("Jellybeans", 2);
@@ -173,7 +174,7 @@ public class TestCase {
 //        map.put("Sourworms", 2);
 //        map.put("Water", 2);
 //        assertThat(test.getPurchaseList(), is(map));
-        for(Snack snack:test.getPurchaseList().keySet()){
+        for (Snack snack : test.getPurchaseList().keySet()) {
             Assert.assertEquals(test.getPurchaseList().get(snack), 2, 1);
         }
 
@@ -181,19 +182,20 @@ public class TestCase {
     }
 
     @Test
-    public void TestGetTotalPrice(){
+    public void TestGetTotalPrice() {
         VendingMachine test = new VendingMachine();
         test.buy("1", 1);
         test.buy("2", 1);
-        Assert.assertEquals(4.7,test.getTotalPrice(),0.01);
+        Assert.assertEquals(4.7, test.getTotalPrice(), 0.01);
 
     }
+
     @Test
-    public void TestSuccessfulBuy(){
+    public void TestSuccessfulBuy() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         VendingMachine test = new VendingMachine();
-        test.buy("1",1);
+        test.buy("1", 1);
         test.successfulBuy();
         test.showStock();
         Assert.assertEquals("Product: Water\t\t\tquantity: 10\n" +
@@ -207,52 +209,78 @@ public class TestCase {
                 "Product: Lollies\t\t\tquantity: 10\n", out.toString());
 
     }
-//    Test PrintPurchaseList function
+
+    //    Test PrintPurchaseList function
     @Test
-    public void TestPrintPurchaseList(){
+    public void TestPrintPurchaseList() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         VendingMachine test = new VendingMachine();
-        test.buy("1",1);
+        test.buy("1", 1);
         test.printPurchaseList();
         Assert.assertEquals("Purchase list:\n" +
-                "                                BBQChips                    1 \n" ,out.toString());
+                "                                BBQChips                    1 \n", out.toString());
+
+
+    }
+    @Test
+    public void TestValidStaff(){
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n0000\n".getBytes());
+        System.setIn(in);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Staff test = new Staff();
+        test.ValidStaff();
+        Assert.assertEquals("Please type you ID: \n" +
+                "Please type you password: \n"
+                ,out.toString());
+
+    }
+    @Test
+    public void TestInValidStaff(){
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n00\n".getBytes());
+        System.setIn(in);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Staff test = new Staff();
+        test.ValidStaff();
+        Assert.assertEquals("Please type you ID: \n" +
+                        "Please type you password: \n"
+                ,out.toString());
+
+    }
+    @Test
+    public void TestPrintStock(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        test.PrintStock();
+
+        Assert.assertEquals("{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+    }
+    @Test
+    public void TestStockAvailable(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        boolean flag = test.stockAvailable("1",2);
+        Assert.assertTrue(flag);
 
 
     }
 //    @Test
-//    public void TestStart(){
-//        ByteArrayInputStream in = new ByteArrayInputStream("1\n1\n1\n".getBytes());
+//    public void TestChangePrice(){
+//
+//        ByteArrayInputStream in = new ByteArrayInputStream("0\n1\n3\n".getBytes());
 //        System.setIn(in);
 //        ByteArrayOutputStream out = new ByteArrayOutputStream();
 //        System.setOut(new PrintStream(out));
+//        BBQChips bbq = new BBQChips();
 //        Menu test = new Menu();
-//        test.start();
-//        Assert.assertEquals(
-//                "BBQChips - Name: BBQChips               Code:1           Price:$2.5,\n"
-//                + "Jellybeans - Name: Jellybeans               Code:2           Price:$2.2,\n"
-//                +"Juice - Name: Juice               Code:3           Price:$3.2,\n"
-//                +"Lollies - Name: Lollies               Code:4           Price:$1.5,\n"
-//                +"Mars - Name: Mars               Code:5           Price:$3.0,\n"
-//                +"OriginalChips - Name: OriginalChips               Code:6           Price:$3.2,\n"
-//                +"Sneakers - Name: Sneakers               Code:7           Price:$3.5,\n"
-//                +"SourWorms - Name: SourWorms               Code:8           Price:$2.0,\n"
-//                +"Water - Name: Water               Code:9           Price:$4.5,\n"
-//                +"\n"
-//                +"At any point during the purchase, type cancel to cancel transaction.\n"
-//                +"\n"
-//                +"Please input the product name or code of snack.\n"
-//                +"Please input the quantity you wish to purchase.\n"
-//                +"Do you want to add another item? Type 0 for yes, 1 for no\n"
-//                +"The total price is $2.50\n"
-//                +"Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)"
-//                +"You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.\n" + "To cancel transaction, type in cancel."
-//                ,
+//        test.changePrice();
+//        Assert.assertEquals(3,bbq.getPrice(),0.1);
 //
-//                out.toString());
+//
 //    }
-    
-    
-    
-
 }

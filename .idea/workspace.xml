@@ -2,64 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee181691-83a4-4898-9ab3-6bcc596b16c2" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/sss.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/sss.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Staff.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Start.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/BBQChips.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/BBQChips.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Jellybeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Jellybeans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Juice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Juice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Lollies.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Lollies.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/Mars.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/Mars.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/snacks/OriginalChips.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/snacks/OriginalChips.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Start.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/BBQChips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/BBQChips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Jellybeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Jellybeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Juice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Juice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Lollies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Lollies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/Mars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/Mars.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/snacks/OriginalChips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/snacks/OriginalChips.java" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.gradle/5.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/VendingMachine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/snacks/BBQChips.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/snacks/BBQChips.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/snacks/Jellybeans.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/snacks/Jellybeans.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/snacks/Juice.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/snacks/Juice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/snacks/Lollies.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/snacks/Lollies.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/snacks/Mars.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/snacks/Mars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/snacks/OriginalChips.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/snacks/OriginalChips.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestCase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestCase$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestCase$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestCase$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestCase$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestCase$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestCase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/sss-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/sss-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Menu.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Staff.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Start.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Start.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Start.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Transaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Transaction.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/Transaction.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/VendingMachine.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/default/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/jacoco-sessions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/BBQChips.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/BBQChips.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/BBQChips.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/BBQChips.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Jellybeans.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Jellybeans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Jellybeans.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Jellybeans.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Juice.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Juice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Juice.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Juice.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Lollies.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Lollies.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Lollies.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Lollies.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Mars.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Mars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Mars.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/Mars.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/OriginalChips.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/OriginalChips.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/OriginalChips.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/snacks/OriginalChips.java.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestCase.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestCase.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestCase.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestCase.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VendingMachine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestCase.java" afterDir="false" />
->>>>>>> bd24aacf8bf6d0e61c2ea379bbe8ba7a68910d2b
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -87,7 +100,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1SomB1WjBouZ1kU8ZjkP6TOSJ6B" />
+  <component name="ProjectId" id="1SVdzWWy0fit6JrZUrz234jjFq1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -100,7 +113,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -127,13 +140,6 @@
   <component name="RunManager" selected="Application.Start">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Start" />
-      <module name="sss.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="testing" />
       <module name="sss.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,13 +192,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCase.TestSetAndGetSnakeCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sss.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCase" />
+      <option name="METHOD_NAME" value="TestSetAndGetSnakeCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Start" />
+        <item itemvalue="JUnit.TestCase.TestSetAndGetSnakeCode" />
         <item itemvalue="JUnit.TestCase" />
-        <item itemvalue="Gradle.Assignment2---team33 [run]" />
         <item itemvalue="Gradle.Assignment2---team33 [build]" />
-        <item itemvalue="Application.testing" />
+        <item itemvalue="Gradle.Assignment2---team33 [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -206,20 +222,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571552831105</updated>
-      <workItem from="1571552832493" duration="10933000" />
-      <workItem from="1572259467482" duration="6244000" />
-      <workItem from="1572266109090" duration="821000" />
-      <workItem from="1572320346271" duration="326000" />
-      <workItem from="1572333802305" duration="13215000" />
+      <workItem from="1571552832493" duration="7963000" />
+      <workItem from="1571649322579" duration="2595000" />
     </task>
+    <task id="LOCAL-00001" summary="added tracking stock and showing stock function.">
+      <created>1571570985240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571570985240</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-<<<<<<< HEAD
-=======
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22354000" />
+    <option name="totallyTimeSpent" value="10800000" />
   </component>
->>>>>>> bd24aacf8bf6d0e61c2ea379bbe8ba7a68910d2b
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -228,99 +246,14 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>sss</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Gradle: junit:junit:4.12</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added tracking stock and showing stock function." />
+    <option name="LAST_COMMIT_MESSAGE" value="added tracking stock and showing stock function." />
   </component>
 </project>

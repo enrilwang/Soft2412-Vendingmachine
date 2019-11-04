@@ -19,7 +19,7 @@ public class VendingMachine {
 <span class="fc" id="L19">  private HashMap&lt;String, Integer&gt; stock = new HashMap&lt;&gt;();</span>
 
 <span class="fc" id="L21">  public VendingMachine() {</span>
-<span class="fc" id="L22">    transaction = new Transaction();</span>
+    //transaction = new Transaction();
 <span class="fc" id="L23">    purchaseList = new HashMap&lt;&gt;();</span>
 <span class="fc" id="L24">    fill();</span>
 <span class="fc" id="L25">  }</span>
@@ -41,7 +41,7 @@ public class VendingMachine {
                   + snack
                   + &quot; left in the vending machine.&quot;);
         }
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        return stock.get(stockSnack) - amount &gt;= 0;</span>
+<span class="fc" id="L44">        return true;</span>
       }
 <span class="fc" id="L46">    }</span>
 <span class="fc" id="L47">    return true;</span>
@@ -225,5 +225,11 @@ public class VendingMachine {
   public void setPurchaseList(HashMap&lt;Snack, Integer&gt; purchaseList) {
 <span class="nc" id="L226">    this.purchaseList = purchaseList;</span>
 <span class="nc" id="L227">  }</span>
+
+  public void PrintStock(){
+<span class="fc" id="L230">    System.out.println(this.stock);</span>
+<span class="fc" id="L231">  }</span>
+
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

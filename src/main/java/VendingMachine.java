@@ -41,7 +41,7 @@ public class VendingMachine {
                   + snack
                   + " left in the vending machine.");
         }
-        return stock.get(stockSnack) - amount >= 0;
+        return true;
       }
     }
     return true;
