@@ -308,64 +308,63 @@ public class VendingMachine&lt;purchaseList&gt; {
 
 <span class="fc" id="L309">    System.out.println(&quot;\nIf you are a staff, please type 11 &quot;);</span>
 
-<span class="fc" id="L311">    System.out.println(&quot;\nIf you want to see stock, please type 12 &quot;);</span>
-<span class="fc" id="L312">  }</span>
+<span class="fc" id="L311">  }</span>
 
   public void PayMethod() {
-<span class="fc" id="L315">    System.out.println(&quot;Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)&quot;);</span>
-<span class="fc" id="L316">    System.out.println(</span>
+<span class="fc" id="L314">    System.out.println(&quot;Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)&quot;);</span>
+<span class="fc" id="L315">    System.out.println(</span>
             &quot;You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.&quot;);
-<span class="fc" id="L318">    System.out.println(&quot;To cancel transaction, type in cancel.&quot;);</span>
-<span class="fc" id="L319">  }</span>
+<span class="fc" id="L317">    System.out.println(&quot;To cancel transaction, type in cancel.&quot;);</span>
+<span class="fc" id="L318">  }</span>
 
 
   public void cashChange(double remainingAmount) {
-<span class="fc" id="L323">      double change = Math.abs(remainingAmount);</span>
-<span class="fc" id="L324">      ArrayList&lt;Double&gt; n = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L322">      double change = Math.abs(remainingAmount);</span>
+<span class="fc" id="L323">      ArrayList&lt;Double&gt; n = new ArrayList&lt;&gt;();</span>
 
-<span class="fc" id="L326">      BigDecimal b1 = new BigDecimal(Double.toString(change));</span>
+<span class="fc" id="L325">      BigDecimal b1 = new BigDecimal(Double.toString(change));</span>
 
-<span class="fc bfc" id="L328" title="All 2 branches covered.">      for (int i = 0; i &lt; cash1.size(); i++) {</span>
-<span class="fc" id="L329">        BigDecimal b2 = new BigDecimal(Double.toString(cash1.get(i)));</span>
-<span class="pc bpc" id="L330" title="1 of 4 branches missed.">        if (b1.compareTo(b2) == 1 || b1.compareTo(b2) == 0) {</span>
-<span class="fc" id="L331">          n.add(cash1.get(i));</span>
-<span class="fc" id="L332">          b1 = b1.subtract(b2);</span>
-<span class="fc" id="L333">          i = 0;</span>
+<span class="fc bfc" id="L327" title="All 2 branches covered.">      for (int i = 0; i &lt; cash1.size(); i++) {</span>
+<span class="fc" id="L328">        BigDecimal b2 = new BigDecimal(Double.toString(cash1.get(i)));</span>
+<span class="pc bpc" id="L329" title="1 of 4 branches missed.">        if (b1.compareTo(b2) == 1 || b1.compareTo(b2) == 0) {</span>
+<span class="fc" id="L330">          n.add(cash1.get(i));</span>
+<span class="fc" id="L331">          b1 = b1.subtract(b2);</span>
+<span class="fc" id="L332">          i = 0;</span>
         }
       }
-<span class="fc" id="L336">      System.out.println(</span>
+<span class="fc" id="L335">      System.out.println(</span>
               &quot;Purchase successful. Here is your change of &quot;
       );
-<span class="fc bfc" id="L339" title="All 2 branches covered.">      for (Double i : n) {</span>
-<span class="fc bfc" id="L340" title="All 2 branches covered.">        if (i == 20) {</span>
-<span class="fc" id="L341">          System.out.print(&quot;$20 &quot;);</span>
+<span class="fc bfc" id="L338" title="All 2 branches covered.">      for (Double i : n) {</span>
+<span class="fc bfc" id="L339" title="All 2 branches covered.">        if (i == 20) {</span>
+<span class="fc" id="L340">          System.out.print(&quot;$20 &quot;);</span>
         }
-<span class="fc bfc" id="L343" title="All 2 branches covered.">        if (i == 10) {</span>
-<span class="fc" id="L344">          System.out.print(&quot;$10 &quot;);</span>
+<span class="fc bfc" id="L342" title="All 2 branches covered.">        if (i == 10) {</span>
+<span class="fc" id="L343">          System.out.print(&quot;$10 &quot;);</span>
         }
-<span class="fc bfc" id="L346" title="All 2 branches covered.">        if (i == 5) {</span>
-<span class="fc" id="L347">          System.out.print(&quot;$5 &quot;);</span>
+<span class="fc bfc" id="L345" title="All 2 branches covered.">        if (i == 5) {</span>
+<span class="fc" id="L346">          System.out.print(&quot;$5 &quot;);</span>
         }
-<span class="fc bfc" id="L349" title="All 2 branches covered.">        if (i == 2) {</span>
-<span class="fc" id="L350">          System.out.print(&quot;$2 &quot;);</span>
+<span class="fc bfc" id="L348" title="All 2 branches covered.">        if (i == 2) {</span>
+<span class="fc" id="L349">          System.out.print(&quot;$2 &quot;);</span>
         }
-<span class="fc bfc" id="L352" title="All 2 branches covered.">        if (i == 1) {</span>
-<span class="fc" id="L353">          System.out.print(&quot;$1 &quot;);</span>
+<span class="fc bfc" id="L351" title="All 2 branches covered.">        if (i == 1) {</span>
+<span class="fc" id="L352">          System.out.print(&quot;$1 &quot;);</span>
         }
-<span class="fc bfc" id="L355" title="All 2 branches covered.">        if (i == 0.5) {</span>
-<span class="fc" id="L356">          System.out.print(&quot;50c &quot;);</span>
+<span class="fc bfc" id="L354" title="All 2 branches covered.">        if (i == 0.5) {</span>
+<span class="fc" id="L355">          System.out.print(&quot;50c &quot;);</span>
         }
-<span class="fc bfc" id="L358" title="All 2 branches covered.">        if (i == 0.2) {</span>
-<span class="fc" id="L359">          System.out.print(&quot;20c &quot;);</span>
+<span class="fc bfc" id="L357" title="All 2 branches covered.">        if (i == 0.2) {</span>
+<span class="fc" id="L358">          System.out.print(&quot;20c &quot;);</span>
         }
-<span class="fc bfc" id="L361" title="All 2 branches covered.">        if (i == 0.1) {</span>
-<span class="fc" id="L362">          System.out.print(&quot;10c &quot;);</span>
+<span class="fc bfc" id="L360" title="All 2 branches covered.">        if (i == 0.1) {</span>
+<span class="fc" id="L361">          System.out.print(&quot;10c &quot;);</span>
         }
 
 
-<span class="fc" id="L366">      }</span>
+<span class="fc" id="L365">      }</span>
 
 
-<span class="fc" id="L369">  }</span>
+<span class="fc" id="L368">  }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

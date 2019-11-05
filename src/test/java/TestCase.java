@@ -477,9 +477,7 @@ public class TestCase {
                 "\n" +
                 "Please input the product name or code of snack you wish to purchase.\n" +
                 "\n" +
-                "If you are a staff, please type 11 \n" +
-                "\n" +
-                "If you want to see stock, please type 12 \n",out.toString());
+                "If you are a staff, please type 11 \n",out.toString());
 
     }
     @Test
