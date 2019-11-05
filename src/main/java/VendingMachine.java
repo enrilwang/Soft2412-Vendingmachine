@@ -222,7 +222,7 @@ public class VendingMachine<purchaseList> {
     stock.put("Mars", 10);
     stock.put("OriginalChips", 10);
     stock.put("Sneakers", 10);
-    stock.put("Sourworms", 10);
+    stock.put("SourWorms", 10);
     stock.put("Water", 10);
   }
 
@@ -298,7 +298,7 @@ public class VendingMachine<purchaseList> {
             .printf("%40s %20s %20s %n", "Sneakers - Name: Sneakers", "Price:$" + sneakers.getPrice(),
                     "Code:7 " + " stock " + VendingMachine.stock.get("Sneakers"));
     System.out.printf("%40s %20s %20s %n", "SourWorms - Name: SourWorms",
-            "Price:$" + sourWorms.getPrice(), "Code:8 " + " stock " + VendingMachine.stock.get("Sourworms"));
+            "Price:$" + sourWorms.getPrice(), "Code:8 " + " stock " + VendingMachine.stock.get("SourWorms"));
     System.out.printf("%40s %20s %20s %n", "Water - Name: Water", "Price:$" + water.getPrice(),
             "Code:9 " + " stock " + VendingMachine.stock.get("Water"));
 

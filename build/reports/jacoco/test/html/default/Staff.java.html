@@ -186,13 +186,13 @@ public class Staff {
 <span class="fc" id="L186">      vendingMachine.PrintStock();</span>
 <span class="fc bfc" id="L187" title="All 2 branches covered.">    }else if(input.equals(&quot;8&quot;)){</span>
 <span class="fc" id="L188">      System.out.println(&quot;How many do you want to add, you can only add &quot; + (10 - vendingMachine</span>
-<span class="fc" id="L189">              .getStock(&quot;Sourworms&quot;)) + &quot; items&quot;);</span>
+<span class="fc" id="L189">              .getStock(&quot;SourWorms&quot;)) + &quot; items&quot;);</span>
 <span class="fc" id="L190">      String input1 = sca.nextLine();</span>
 <span class="fc" id="L191">      int value = Integer.parseInt(input1);</span>
 
-<span class="fc" id="L193">      int add = vendingMachine.getStock(&quot;Sourworms&quot;);</span>
+<span class="fc" id="L193">      int add = vendingMachine.getStock(&quot;SourWorms&quot;);</span>
 
-<span class="fc" id="L195">      vendingMachine.getStock().put(&quot;Sourworms&quot;, value + add);</span>
+<span class="fc" id="L195">      vendingMachine.getStock().put(&quot;SourWorms&quot;, value + add);</span>
 <span class="fc" id="L196">      vendingMachine.PrintStock();</span>
 <span class="pc bpc" id="L197" title="1 of 2 branches missed.">    }else if(input.equals(&quot;9&quot;)){</span>
 <span class="fc" id="L198">      System.out.println(&quot;How many do you want to add, you can only add &quot; + (10 - vendingMachine</span>

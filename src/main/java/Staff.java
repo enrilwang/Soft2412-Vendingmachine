@@ -186,13 +186,13 @@ public class Staff {
       vendingMachine.PrintStock();
     }else if(input.equals("8")){
       System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-              .getStock("Sourworms")) + " items");
+              .getStock("SourWorms")) + " items");
       String input1 = sca.nextLine();
       int value = Integer.parseInt(input1);
 
-      int add = vendingMachine.getStock("Sourworms");
+      int add = vendingMachine.getStock("SourWorms");
 
-      vendingMachine.getStock().put("Sourworms", value + add);
+      vendingMachine.getStock().put("SourWorms", value + add);
       vendingMachine.PrintStock();
     }else if(input.equals("9")){
       System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine

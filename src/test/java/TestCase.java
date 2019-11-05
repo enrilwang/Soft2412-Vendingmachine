@@ -116,7 +116,7 @@ public class TestCase {
         map.put("Mars", 10);
         map.put("OriginalChips", 10);
         map.put("Sneakers", 10);
-        map.put("Sourworms", 10);
+        map.put("SourWorms", 10);
         map.put("Water", 10);
         assertThat(test.getStock(), is(map));
 
@@ -132,9 +132,9 @@ public class TestCase {
         test.showStock();
         Assert.assertEquals("Product: Water\t\t\tquantity: 10\n" +
                 "Product: Mars\t\t\tquantity: 10\n" +
-                "Product: Sourworms\t\t\tquantity: 10\n" +
                 "Product: Sneakers\t\t\tquantity: 10\n" +
                 "Product: BBQChips\t\t\tquantity: 10\n" +
+                "Product: SourWorms\t\t\tquantity: 10\n" +
                 "Product: OriginalChips\t\t\tquantity: 10\n" +
                 "Product: Juice\t\t\tquantity: 10\n" +
                 "Product: Jellybeans\t\t\tquantity: 10\n" +
@@ -146,14 +146,14 @@ public class TestCase {
     public void TestBuy() {
         VendingMachine test = new VendingMachine();
         boolean flag = test.buy("1", 2);
-        test.buy("2", 1);
-        test.buy("3", 1);
-        test.buy("4", 1);
-        test.buy("5", 1);
-        test.buy("6", 1);
-        test.buy("7", 1);
-        test.buy("8", 1);
-        test.buy("9", 1);
+        boolean flag2 = test.buy("2", 1);
+        boolean flag3 = test.buy("3", 1);
+        boolean flag4 = test.buy("4", 1);
+        boolean flag5 = test.buy("5", 1);
+        boolean flag6 = test.buy("6", 1);
+        boolean flag7 = test.buy("7", 1);
+        boolean flag8 = test.buy("8", 1);
+        boolean flag9 = test.buy("9", 1);
         test.buy("BBQChips", 1);
         test.buy("Jellybeans", 1);
         test.buy("Juice", 1);
@@ -161,7 +161,7 @@ public class TestCase {
         test.buy("Mars", 1);
         test.buy("OriginalChips", 1);
         test.buy("Sneakers", 1);
-        test.buy("Sourworms", 1);
+        test.buy("SourWorms", 1);
         test.buy("Water", 1);
 //        Map<String, Integer> map = new HashMap<>();
 //        map.put("BBQChips", 2);
@@ -174,7 +174,7 @@ public class TestCase {
 //        map.put("Sourworms", 2);
 //        map.put("Water", 2);
 //        assertThat(test.getPurchaseList(), is(map));
-        Assert.assertTrue(flag);
+        Assert.assertTrue(flag&flag2&flag3&flag4&flag5&flag6&flag7&flag8&flag9);
     }
 
 
@@ -199,9 +199,9 @@ public class TestCase {
         test.showStock();
         Assert.assertEquals("Product: Water\t\t\tquantity: 10\n" +
                 "Product: Mars\t\t\tquantity: 10\n" +
-                "Product: Sourworms\t\t\tquantity: 10\n" +
                 "Product: Sneakers\t\t\tquantity: 10\n" +
                 "Product: BBQChips\t\t\tquantity: 9\n" +
+                "Product: SourWorms\t\t\tquantity: 10\n" +
                 "Product: OriginalChips\t\t\tquantity: 10\n" +
                 "Product: Juice\t\t\tquantity: 10\n" +
                 "Product: Jellybeans\t\t\tquantity: 10\n" +
@@ -255,7 +255,7 @@ public class TestCase {
         VendingMachine test = new VendingMachine();
         test.PrintStock();
 
-        Assert.assertEquals("{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+        Assert.assertEquals("{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
 
     }
     @Test
@@ -263,9 +263,113 @@ public class TestCase {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         VendingMachine test = new VendingMachine();
-        boolean flag = test.stockAvailable("1",2);
-        Assert.assertTrue(flag);
+        test.buy("1",11);
+        Assert.assertEquals("You cannot purchase 11 BBQChips because there are only 10 BBQChips left in the vending machine.\n",out.toString());
 
+        ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out2));
+        VendingMachine test2 = new VendingMachine();
+        test2.buy("2",11);
+        Assert.assertEquals("You cannot purchase 11 Jellybeans because there are only 10 Jellybeans left in the vending machine.\n",out2.toString());
+
+        ByteArrayOutputStream out3 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out3));
+        VendingMachine test3 = new VendingMachine();
+        test3.buy("3",11);
+        Assert.assertEquals("You cannot purchase 11 Juice because there are only 10 Juice left in the vending machine.\n",out3.toString());
+
+        ByteArrayOutputStream out4 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out4));
+        VendingMachine test4 = new VendingMachine();
+        test4.buy("4",11);
+        Assert.assertEquals("You cannot purchase 11 Lollies because there are only 10 Lollies left in the vending machine.\n",out4.toString());
+
+        ByteArrayOutputStream out5 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out5));
+        VendingMachine test5 = new VendingMachine();
+        test5.buy("5",11);
+        Assert.assertEquals("You cannot purchase 11 Mars because there are only 10 Mars left in the vending machine.\n",out5.toString());
+
+        ByteArrayOutputStream out6 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out6));
+        VendingMachine test6 = new VendingMachine();
+        test6.buy("6",11);
+        Assert.assertEquals("You cannot purchase 11 OriginalChips because there are only 10 OriginalChips left in the vending machine.\n",out6.toString());
+
+        ByteArrayOutputStream out7 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out7));
+        VendingMachine test7 = new VendingMachine();
+        test7.buy("7",11);
+        Assert.assertEquals("You cannot purchase 11 Sneakers because there are only 10 Sneakers left in the vending machine.\n",out7.toString());
+
+        ByteArrayOutputStream out8 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out8));
+        VendingMachine test8 = new VendingMachine();
+        test8.buy("8",11);
+        Assert.assertEquals("You cannot purchase 11 SourWorms because there are only 10 SourWorms left in the vending machine.\n",out8.toString());
+
+        ByteArrayOutputStream out9 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out9));
+        VendingMachine test9 = new VendingMachine();
+        test9.buy("9",11);
+        Assert.assertEquals("You cannot purchase 11 Water because there are only 10 Water left in the vending machine.\n",out9.toString());
+
+    }
+    @Test
+    public void TestStockAvailable2(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine();
+        test.buy("BBQchips",11);
+        Assert.assertEquals("You cannot purchase 11 BBQChips because there are only 10 BBQChips left in the vending machine.\n",out.toString());
+
+        ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out2));
+        VendingMachine test2 = new VendingMachine();
+        test2.buy("Jellybeans",11);
+        Assert.assertEquals("You cannot purchase 11 Jellybeans because there are only 10 Jellybeans left in the vending machine.\n",out2.toString());
+
+        ByteArrayOutputStream out3 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out3));
+        VendingMachine test3 = new VendingMachine();
+        test3.buy("Juice",11);
+        Assert.assertEquals("You cannot purchase 11 Juice because there are only 10 Juice left in the vending machine.\n",out3.toString());
+
+        ByteArrayOutputStream out4 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out4));
+        VendingMachine test4 = new VendingMachine();
+        test4.buy("Lollies",11);
+        Assert.assertEquals("You cannot purchase 11 Lollies because there are only 10 Lollies left in the vending machine.\n",out4.toString());
+
+        ByteArrayOutputStream out5 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out5));
+        VendingMachine test5 = new VendingMachine();
+        test5.buy("Mars",11);
+        Assert.assertEquals("You cannot purchase 11 Mars because there are only 10 Mars left in the vending machine.\n",out5.toString());
+
+        ByteArrayOutputStream out6 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out6));
+        VendingMachine test6 = new VendingMachine();
+        test6.buy("OriginalChips",11);
+        Assert.assertEquals("You cannot purchase 11 OriginalChips because there are only 10 OriginalChips left in the vending machine.\n",out6.toString());
+
+        ByteArrayOutputStream out7 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out7));
+        VendingMachine test7 = new VendingMachine();
+        test7.buy("Sneakers",11);
+        Assert.assertEquals("You cannot purchase 11 Sneakers because there are only 10 Sneakers left in the vending machine.\n",out7.toString());
+
+        ByteArrayOutputStream out8 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out8));
+        VendingMachine test8 = new VendingMachine();
+        test8.buy("SourWorms",11);
+        Assert.assertEquals("You cannot purchase 11 SourWorms because there are only 10 SourWorms left in the vending machine.\n",out8.toString());
+
+        ByteArrayOutputStream out9 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out9));
+        VendingMachine test9 = new VendingMachine();
+        test9.buy("Water",11);
+        Assert.assertEquals("You cannot purchase 11 Water because there are only 10 Water left in the vending machine.\n",out9.toString());
 
     }
     @Test
@@ -399,8 +503,8 @@ public class TestCase {
         test.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in2 = new ByteArrayInputStream("2\n3\n10\n".getBytes());
         System.setIn(in2);
         ByteArrayOutputStream out2 = new ByteArrayOutputStream();
@@ -409,8 +513,8 @@ public class TestCase {
         test2.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in3 = new ByteArrayInputStream("3\n3\n10\n".getBytes());
         System.setIn(in3);
         ByteArrayOutputStream out3 = new ByteArrayOutputStream();
@@ -419,8 +523,8 @@ public class TestCase {
         test3.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in4 = new ByteArrayInputStream("4\n3\n10\n".getBytes());
         System.setIn(in4);
         ByteArrayOutputStream out4 = new ByteArrayOutputStream();
@@ -429,8 +533,8 @@ public class TestCase {
         test4.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in5 = new ByteArrayInputStream("5\n3\n10\n".getBytes());
         System.setIn(in5);
         ByteArrayOutputStream out5 = new ByteArrayOutputStream();
@@ -439,8 +543,8 @@ public class TestCase {
         test5.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in6 = new ByteArrayInputStream("6\n3\n10\n".getBytes());
         System.setIn(in6);
         ByteArrayOutputStream out6 = new ByteArrayOutputStream();
@@ -449,8 +553,8 @@ public class TestCase {
         test6.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in7 = new ByteArrayInputStream("7\n3\n10\n".getBytes());
         System.setIn(in7);
         ByteArrayOutputStream out7 = new ByteArrayOutputStream();
@@ -459,8 +563,8 @@ public class TestCase {
         test7.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
-
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+//
         ByteArrayInputStream in8 = new ByteArrayInputStream("8\n3\n10\n".getBytes());
         System.setIn(in8);
         ByteArrayOutputStream out8 = new ByteArrayOutputStream();
@@ -469,7 +573,7 @@ public class TestCase {
         test8.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
 
         ByteArrayInputStream in9 = new ByteArrayInputStream("9\n3\n10\n".getBytes());
         System.setIn(in9);
@@ -479,7 +583,7 @@ public class TestCase {
         test9.addVolume();
         Assert.assertEquals("which one do you want to add volume, type Code\n" +
                 "How many do you want to add, you can only add 0 items\n" +
-                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+                "{Water=10, Mars=10, Sneakers=10, BBQChips=10, SourWorms=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
     }
 
     @Test
@@ -539,5 +643,12 @@ public class TestCase {
                 "10c ",out8.toString());
 
 
+    }
+    @Test
+    public void TestResetPurchaseList(){
+        VendingMachine test = new VendingMachine();
+        test.resetPurchase();
+        Map<String, Integer> map = new HashMap<>();
+        assertThat(test.getPurchaseList(), is(map));
     }
 }
