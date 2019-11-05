@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,13 +16,41 @@ import snacks.Water;
 
 public class VendingMachine<purchaseList> {
   private Transaction transaction;
-
+  private BBQChips bbq;
+  private Jellybeans jelly;
+  private Juice juice;
+  private Lollies lollies;
+  private Mars mars;
+  private OriginalChips ochip;
+  private Sneakers sneakers;
+  private SourWorms sourWorms;
+  private Water water;
   private HashMap<Snack, Integer> purchaseList;
   public static HashMap<String, Integer> stock = new HashMap<>();
+  private ArrayList<Double> cash1 = new ArrayList<>();
+
 
   public VendingMachine() {
+    cash1.add(20.00);
+    cash1.add(10.00);
+    cash1.add(5.00);
+    cash1.add(2.00);
+    cash1.add(1.00);
+    cash1.add(0.5);
+    cash1.add(0.2);
+    cash1.add(0.1);
+
     transaction = new Transaction();
     purchaseList = new HashMap<>();
+    bbq = new BBQChips();
+    jelly = new Jellybeans();
+    juice = new Juice();
+    lollies = new Lollies();
+    mars = new Mars();
+    ochip = new OriginalChips();
+    sneakers = new Sneakers();
+    sourWorms = new SourWorms();
+    water = new Water();
     fill();
 
   }
@@ -33,15 +62,15 @@ public class VendingMachine<purchaseList> {
       if (snack.equals(stockSnack)) {
         if (stock.get(stockSnack) - amount < 0) {
           System.out.println(
-              "You cannot purchase "
-                  + amount
-                  + " "
-                  + snack
-                  + " because there are only "
-                  + stock.get(stockSnack)
-                  + " "
-                  + snack
-                  + " left in the vending machine.");
+                  "You cannot purchase "
+                          + amount
+                          + " "
+                          + snack
+                          + " because there are only "
+                          + stock.get(stockSnack)
+                          + " "
+                          + snack
+                          + " left in the vending machine.");
           return false;
         }
         return true;
@@ -206,7 +235,7 @@ public class VendingMachine<purchaseList> {
     }
   }
 
-  public int getStock(String nu){
+  public int getStock(String nu) {
     return stock.get(nu);
   }
 
@@ -246,9 +275,96 @@ public class VendingMachine<purchaseList> {
       }
     }*/
 
-  public void PrintStock(){
+  public void PrintStock() {
     System.out.println(this.stock);
   }
 
+  public void StartMenu() {
+    System.out
+            .printf("%40s %20s %20s %n", "BBQChips - Name: BBQChips", "Price:$" + bbq.getPrice(),
+                    "Code:1 " + " stock " + VendingMachine.stock.get("BBQChips"));
+    System.out.printf("%40s %20s %20s %n", "Jellybeans - Name: Jellybeans",
+            "Price:$" + jelly.getPrice(), "Code:2 " + " stock " + VendingMachine.stock.get("Jellybeans"));
+    System.out.printf("%40s %20s %20s %n", "Juice - Name: Juice", "Price:$" + juice.getPrice(),
+            "Code:3 " + " stock " + VendingMachine.stock.get("Juice"));
+    System.out
+            .printf("%40s %20s %20s %n", "Lollies - Name: Lollies", "Price:$" + lollies.getPrice(),
+                    "Code:4 " + " stock " + VendingMachine.stock.get("Lollies"));
+    System.out
+            .printf("%40s %20s %20s %n", "Mars - Name: Mars", "Price:$" + mars.getPrice(), "Code:5 " + " stock " + VendingMachine.stock.get("Mars"));
+    System.out.printf("%40s %20s %20s %n", "OriginalChips - Name: OriginalChips",
+            "Price:$" + ochip.getPrice(), "Code:6 " + " stock " + VendingMachine.stock.get("OriginalChips"));
+    System.out
+            .printf("%40s %20s %20s %n", "Sneakers - Name: Sneakers", "Price:$" + sneakers.getPrice(),
+                    "Code:7 " + " stock " + VendingMachine.stock.get("Sneakers"));
+    System.out.printf("%40s %20s %20s %n", "SourWorms - Name: SourWorms",
+            "Price:$" + sourWorms.getPrice(), "Code:8 " + " stock " + VendingMachine.stock.get("Sourworms"));
+    System.out.printf("%40s %20s %20s %n", "Water - Name: Water", "Price:$" + water.getPrice(),
+            "Code:9 " + " stock " + VendingMachine.stock.get("Water"));
 
+    System.out.println("\nAt any point during the purchase, type cancel to cancel transaction.");
+
+    System.out.println("\nPlease input the product name or code of snack you wish to purchase.");
+
+    System.out.println("\nIf you are a staff, please type 11 ");
+
+    System.out.println("\nIf you want to see stock, please type 12 ");
+  }
+
+  public void PayMethod() {
+    System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
+    System.out.println(
+            "You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
+    System.out.println("To cancel transaction, type in cancel.");
+  }
+
+
+  public void cashChange(double remainingAmount) {
+      double change = Math.abs(remainingAmount);
+      ArrayList<Double> n = new ArrayList<>();
+
+      BigDecimal b1 = new BigDecimal(Double.toString(change));
+
+      for (int i = 0; i < cash1.size(); i++) {
+        BigDecimal b2 = new BigDecimal(Double.toString(cash1.get(i)));
+        if (b1.compareTo(b2) == 1 || b1.compareTo(b2) == 0) {
+          n.add(cash1.get(i));
+          b1 = b1.subtract(b2);
+          i = 0;
+        }
+      }
+      System.out.println(
+              "Purchase successful. Here is your change of "
+      );
+      for (Double i : n) {
+        if (i == 20) {
+          System.out.print("$20 ");
+        }
+        if (i == 10) {
+          System.out.print("$10 ");
+        }
+        if (i == 5) {
+          System.out.print("$5 ");
+        }
+        if (i == 2) {
+          System.out.print("$2 ");
+        }
+        if (i == 1) {
+          System.out.print("$1 ");
+        }
+        if (i == 0.5) {
+          System.out.print("50c ");
+        }
+        if (i == 0.2) {
+          System.out.print("20c ");
+        }
+        if (i == 0.1) {
+          System.out.print("10c ");
+        }
+
+
+      }
+
+
+  }
 }

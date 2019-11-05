@@ -145,7 +145,7 @@ public class TestCase {
     @Test
     public void TestBuy() {
         VendingMachine test = new VendingMachine();
-        test.buy("1", 2);
+        boolean flag = test.buy("1", 2);
         test.buy("2", 1);
         test.buy("3", 1);
         test.buy("4", 1);
@@ -174,12 +174,11 @@ public class TestCase {
 //        map.put("Sourworms", 2);
 //        map.put("Water", 2);
 //        assertThat(test.getPurchaseList(), is(map));
-        for (Snack snack : test.getPurchaseList().keySet()) {
-            Assert.assertEquals(test.getPurchaseList().get(snack), 2, 1);
-        }
-
-
+        Assert.assertTrue(flag);
     }
+
+
+
 
     @Test
     public void TestGetTotalPrice() {
@@ -272,105 +271,87 @@ public class TestCase {
     @Test
     public void TestChangePrice(){
 
-        ByteArrayInputStream in = new ByteArrayInputStream("0\n1\n3\n10\n".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n3\n10\n".getBytes());
         System.setIn(in);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Staff test = new Staff();
         test.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
 
-        ByteArrayInputStream in2 = new ByteArrayInputStream("0\n2\n3\n10\n".getBytes());
+        ByteArrayInputStream in2 = new ByteArrayInputStream("2\n3\n10\n".getBytes());
         System.setIn(in2);
         ByteArrayOutputStream out2 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out2));
         Staff test2 = new Staff();
         test2.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in3 = new ByteArrayInputStream("0\n3\n3\n10\n".getBytes());
+        ByteArrayInputStream in3 = new ByteArrayInputStream("3\n3\n10\n".getBytes());
         System.setIn(in3);
         ByteArrayOutputStream out3 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out3));
         Staff test3 = new Staff();
         test3.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in4 = new ByteArrayInputStream("0\n4\n3\n10\n".getBytes());
+        ByteArrayInputStream in4 = new ByteArrayInputStream("4\n3\n10\n".getBytes());
         System.setIn(in4);
         ByteArrayOutputStream out4 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out4));
         Staff test4 = new Staff();
         test4.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in5 = new ByteArrayInputStream("0\n5\n3\n10\n".getBytes());
+        ByteArrayInputStream in5 = new ByteArrayInputStream("5\n3\n10\n".getBytes());
         System.setIn(in5);
         ByteArrayOutputStream out5 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out5));
         Staff test5 = new Staff();
         test5.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in6 = new ByteArrayInputStream("0\n6\n3\n10\n".getBytes());
+        ByteArrayInputStream in6 = new ByteArrayInputStream("6\n3\n10\n".getBytes());
         System.setIn(in6);
         ByteArrayOutputStream out6 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out6));
         Staff test6 = new Staff();
         test6.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in7 = new ByteArrayInputStream("0\n7\n3\n10\n".getBytes());
+        ByteArrayInputStream in7 = new ByteArrayInputStream("7\n3\n10\n".getBytes());
         System.setIn(in7);
         ByteArrayOutputStream out7 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out7));
         Staff test7 = new Staff();
         test7.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in8 = new ByteArrayInputStream("0\n8\n3\n10\n".getBytes());
+        ByteArrayInputStream in8 = new ByteArrayInputStream("8\n3\n10\n".getBytes());
         System.setIn(in8);
         ByteArrayOutputStream out8 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out8));
         Staff test8 = new Staff();
         test8.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
 
-        ByteArrayInputStream in9 = new ByteArrayInputStream("0\n9\n3\n10\n".getBytes());
+        ByteArrayInputStream in9 = new ByteArrayInputStream("9\n3\n10\n".getBytes());
         System.setIn(in9);
         ByteArrayOutputStream out9 = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out9));
         Staff test9 = new Staff();
         test9.changePrice();
-        Assert.assertEquals("Do you want to change the price, 0 for yes, any number for quit\n" +
-                "which one do you want to change price, type Code\n" +
-                "How much do you want to set\n" +
-                "Do you want to change the price, 0 for yes, any number for quit\n",out.toString());
+        Assert.assertEquals("which one do you want to change price, type Code\n" +
+                "How much do you want to set\n",out.toString());
     }
     @Test
     public void TestStartMenu(){
@@ -378,15 +359,15 @@ public class TestCase {
         System.setOut(new PrintStream(out));
         VendingMachine test = new VendingMachine();
         test.StartMenu();
-        Assert.assertEquals("               BBQChips - Name: BBQChips           Price:$2.5               Code:1 \n" +
-                "           Jellybeans - Name: Jellybeans           Price:$2.2               Code:2 \n" +
-                "                     Juice - Name: Juice           Price:$3.2               Code:3 \n" +
-                "                 Lollies - Name: Lollies           Price:$1.5               Code:4 \n" +
-                "                       Mars - Name: Mars           Price:$3.0               Code:5 \n" +
-                "     OriginalChips - Name: OriginalChips           Price:$3.2               Code:6 \n" +
-                "               Sneakers - Name: Sneakers           Price:$3.5               Code:7 \n" +
-                "             SourWorms - Name: SourWorms           Price:$2.0               Code:8 \n" +
-                "                     Water - Name: Water           Price:$4.5               Code:9 \n" +
+        Assert.assertEquals("               BBQChips - Name: BBQChips           Price:$2.5     Code:1  stock 10 \n" +
+                "           Jellybeans - Name: Jellybeans           Price:$2.2     Code:2  stock 10 \n" +
+                "                     Juice - Name: Juice           Price:$3.2     Code:3  stock 10 \n" +
+                "                 Lollies - Name: Lollies           Price:$1.5     Code:4  stock 10 \n" +
+                "                       Mars - Name: Mars           Price:$3.0     Code:5  stock 10 \n" +
+                "     OriginalChips - Name: OriginalChips           Price:$3.2     Code:6  stock 10 \n" +
+                "               Sneakers - Name: Sneakers           Price:$3.5     Code:7  stock 10 \n" +
+                "             SourWorms - Name: SourWorms           Price:$2.0     Code:8  stock 10 \n" +
+                "                     Water - Name: Water           Price:$4.5     Code:9  stock 10 \n" +
                 "\n" +
                 "At any point during the purchase, type cancel to cancel transaction.\n" +
                 "\n" +
@@ -406,6 +387,157 @@ public class TestCase {
         Assert.assertEquals("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)\n" +
                 "You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.\n" +
                 "To cancel transaction, type in cancel.\n",out.toString());
+
+    }
+    @Test
+    public void TestAddVolume(){
+        ByteArrayInputStream in = new ByteArrayInputStream("1\n0\n10\n".getBytes());
+        System.setIn(in);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        Staff test = new Staff();
+        test.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in2 = new ByteArrayInputStream("2\n3\n10\n".getBytes());
+        System.setIn(in2);
+        ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out2));
+        Staff test2 = new Staff();
+        test2.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in3 = new ByteArrayInputStream("3\n3\n10\n".getBytes());
+        System.setIn(in3);
+        ByteArrayOutputStream out3 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out3));
+        Staff test3 = new Staff();
+        test3.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in4 = new ByteArrayInputStream("4\n3\n10\n".getBytes());
+        System.setIn(in4);
+        ByteArrayOutputStream out4 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out4));
+        Staff test4 = new Staff();
+        test4.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in5 = new ByteArrayInputStream("5\n3\n10\n".getBytes());
+        System.setIn(in5);
+        ByteArrayOutputStream out5 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out5));
+        Staff test5 = new Staff();
+        test5.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in6 = new ByteArrayInputStream("6\n3\n10\n".getBytes());
+        System.setIn(in6);
+        ByteArrayOutputStream out6 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out6));
+        Staff test6 = new Staff();
+        test6.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in7 = new ByteArrayInputStream("7\n3\n10\n".getBytes());
+        System.setIn(in7);
+        ByteArrayOutputStream out7 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out7));
+        Staff test7 = new Staff();
+        test7.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in8 = new ByteArrayInputStream("8\n3\n10\n".getBytes());
+        System.setIn(in8);
+        ByteArrayOutputStream out8 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out8));
+        Staff test8 = new Staff();
+        test8.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+
+        ByteArrayInputStream in9 = new ByteArrayInputStream("9\n3\n10\n".getBytes());
+        System.setIn(in9);
+        ByteArrayOutputStream out9 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out9));
+        Staff test9 = new Staff();
+        test9.addVolume();
+        Assert.assertEquals("which one do you want to add volume, type Code\n" +
+                "How many do you want to add, you can only add 0 items\n" +
+                "{Water=10, Mars=10, Sourworms=10, Sneakers=10, BBQChips=10, OriginalChips=10, Juice=10, Jellybeans=10, Lollies=10}\n",out.toString());
+    }
+
+    @Test
+    public void  TestCashChange(){
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        VendingMachine test = new VendingMachine<>();
+        test.cashChange(-5);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "$5 ",out.toString());
+        ByteArrayOutputStream out2 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out2));
+        VendingMachine test2 = new VendingMachine<>();
+        test2.cashChange(-20);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "$20 " ,out2.toString());
+        ByteArrayOutputStream out3 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out3));
+        VendingMachine test3 = new VendingMachine<>();
+        test3.cashChange(-10);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "$10 ",out3.toString());
+
+        ByteArrayOutputStream out4 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out4));
+        VendingMachine test4 = new VendingMachine<>();
+        test4.cashChange(-2);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "$2 ",out4.toString());
+
+        ByteArrayOutputStream out5 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out5));
+        VendingMachine test5 = new VendingMachine<>();
+        test5.cashChange(-1);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "$1 ",out5.toString());
+
+        ByteArrayOutputStream out6 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out6));
+        VendingMachine test6 = new VendingMachine<>();
+        test6.cashChange(-0.5);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "50c ",out6.toString());
+
+        ByteArrayOutputStream out7 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out7));
+        VendingMachine test7 = new VendingMachine<>();
+        test7.cashChange(-0.2);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "20c ",out7.toString());
+
+        ByteArrayOutputStream out8 = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out8));
+        VendingMachine test8 = new VendingMachine<>();
+        test8.cashChange(-0.1);
+        Assert.assertEquals("Purchase successful. Here is your change of \n" +
+                "10c ",out8.toString());
+
 
     }
 }

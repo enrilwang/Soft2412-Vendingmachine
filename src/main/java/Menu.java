@@ -34,7 +34,6 @@ public class Menu {
   private HashMap<Integer, HashMap<Snack,Integer>> tran;
   private int i = 0;
   private Cancel cancel;
-  private  ArrayList<Double>  cash1  = new ArrayList<>();
   private  ArrayList<String> cash = new ArrayList<>();
 
   public Menu() {
@@ -52,14 +51,6 @@ public class Menu {
     water = new Water();
     cancel = new Cancel();
     tran = new HashMap<Integer, HashMap<Snack,Integer>>();
-    cash1.add(20.00);
-    cash1.add(10.00);
-    cash1.add(5.00);
-    cash1.add(2.00);
-    cash1.add(1.00);
-    cash1.add(0.5);
-    cash1.add(0.2);
-    cash1.add(0.1);
     cash.add("20");
     cash.add("10");
     cash.add("5");
@@ -78,35 +69,7 @@ public class Menu {
     //vendingMachine.showStock();
     vendingMachine.resetPurchase();
     while (true) {
-      System.out
-          .printf("%40s %20s %20s %n", "BBQChips - Name: BBQChips", "Price:$" + bbq.getPrice(),
-              "Code:1 "+ " stock " + VendingMachine.stock.get("BBQChips"));
-      System.out.printf("%40s %20s %20s %n", "Jellybeans - Name: Jellybeans",
-          "Price:$" + jelly.getPrice(), "Code:2 " + " stock "+VendingMachine.stock.get("Jellybeans"));
-      System.out.printf("%40s %20s %20s %n", "Juice - Name: Juice", "Price:$" + juice.getPrice(),
-          "Code:3 "+ " stock " +VendingMachine.stock.get("Juice"));
-      System.out
-          .printf("%40s %20s %20s %n", "Lollies - Name: Lollies", "Price:$" + lollies.getPrice(),
-              "Code:4 " + " stock "+ VendingMachine.stock.get("Lollies"));
-      System.out
-          .printf("%40s %20s %20s %n", "Mars - Name: Mars", "Price:$" + mars.getPrice(), "Code:5 "+ " stock "+ VendingMachine.stock.get("Mars"));
-      System.out.printf("%40s %20s %20s %n", "OriginalChips - Name: OriginalChips",
-          "Price:$" + ochip.getPrice(), "Code:6 "+ " stock "+ VendingMachine.stock.get("OriginalChips"));
-      System.out
-          .printf("%40s %20s %20s %n", "Sneakers - Name: Sneakers", "Price:$" + sneakers.getPrice(),
-              "Code:7 "+ " stock "+ VendingMachine.stock.get("Sneakers"));
-      System.out.printf("%40s %20s %20s %n", "SourWorms - Name: SourWorms",
-          "Price:$" + sourWorms.getPrice(), "Code:8 "+ " stock "+ VendingMachine.stock.get("Sourworms"));
-      System.out.printf("%40s %20s %20s %n", "Water - Name: Water", "Price:$" + water.getPrice(),
-          "Code:9 "+ " stock "+ VendingMachine.stock.get("Water"));
-
-      System.out.println("\nAt any point during the purchase, type cancel to cancel transaction.");
-
-      System.out.println("\nPlease input the product name or code of snack you wish to purchase.");
-
-      System.out.println("\nIf you are a staff, please type 11 ");
-
-      System.out.println("\nIf you want to see stock, please type 12 ");
+      vendingMachine.StartMenu();
       //ask customer what items they want to buy.
       while (true) {
 
@@ -130,10 +93,10 @@ public class Menu {
                   "Do you want to change the price, 0 for yes, 1 for add volume, 2 for look the transcation, any other number for quit");
               String inn = scan.nextLine();
               if(inn.equals("0")) {
-                changePrice();
+                staff.changePrice();
               }
               else if(inn.equals("1")){
-                addVolume();
+                staff.addVolume();
               }else if(inn.equals("2")){
                 printTran();
               }
@@ -171,10 +134,7 @@ public class Menu {
           .parseDouble(new DecimalFormat("#.##").format(vendingMachine.getTotalPrice()));
       vendingMachine.printPurchaseList();
       System.out.println("\n\nThe total price is $" + String.format("%.2f", price));
-      System.out.println("Please pay with coins (10c, 20c, 50c, $1, $2) and notes ($5, $10, $20)");
-      System.out.println(
-          "You have to pay with currency values listed above. To pay with dollars, just enter the amount. To pay with cents, enter the amount and add the character c at the end.");
-      System.out.println("To cancel transaction, type in cancel.");
+      vendingMachine.PayMethod();
       //Each time after customer enters money, it will show how much is left to be paid. If amount left is 0, it will break the loop.
       double totalPaid = 0.0;
 
@@ -215,73 +175,20 @@ public class Menu {
           start();
         }
         if (remainingAmount < 0.0) {
-          double change = Math.abs(remainingAmount);
-//          ArrayList<String> l = new ArrayList<>();
-          ArrayList<Double> n = new ArrayList<>();
-
-          BigDecimal b1 = new BigDecimal(Double.toString(change));
-
-//            for (Double i : cash1) {
-//              BigDecimal b2 = new BigDecimal(Double.toString(i));
-//              if (b1.compareTo(b2) == 1 || b1.compareTo(b2) == 0) {
-//                System.out.println(b1);
-//                n.add(i);
-//                b1 = b1.subtract(b2);
-//
-//              }
-//            }
-
-          for(int i = 0; i < cash1.size(); i++){
-            BigDecimal b2 = new BigDecimal(Double.toString(cash1.get(i)));
-            if (b1.compareTo(b2) == 1 || b1.compareTo(b2) == 0) {
-              // System.out.println(b1);
-              n.add(cash1.get(i));
-              b1 = b1.subtract(b2);
-              i = 0;
-            }
-          }
-          System.out.println(
-              "Purchase successful. Here is your change of "
-          );
-          for(Double i : n){
-            if(i == 20){
-              System.out.print("$20 ");
-            }
-            if(i == 10){
-              System.out.print("$10 ");
-            }
-            if(i == 5){
-              System.out.print("$5 ");
-            }
-            if(i == 2){
-              System.out.print("$2 ");
-            }
-            if(i == 1){
-              System.out.print("$1 ");
-            }
-            if(i == 0.5){
-              System.out.print("50c ");
-            }
-            if(i == 0.2){
-              System.out.print("20c ");
-            }
-            if(i == 0.1){
-              System.out.print("10c ");
-            }
-
-
-
-          }
+          vendingMachine.cashChange(remainingAmount);
           vendingMachine.successfulBuy();
           tran.put(i, vendingMachine.getPurchaseList());
           System.out.println("\n\nNext customer.");
           i++;
           start();
         }
-      }
 
+
+      }
     }
+
   }
+
 
   //each input is checked to see if it is cancel, if so, move on to next customer (call start()).
   private void cancelCheck(String input) {
@@ -295,174 +202,6 @@ public class Menu {
     }
   }
 
-
-  public void changePrice() {
-    Scanner scan = new Scanner(System.in);
-
-    System.out.println("which one do you want to change price, type Code");
-    String input = scan.nextLine();
-    if (input.equals("1")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      bbq.setPrice(value);
-    } else if (input.equals("2")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      jelly.setPrice(value);
-    } else if (input.equals("3")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      juice.setPrice(value);
-    } else if (input.equals("4")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      lollies.setPrice(value);
-    } else if (input.equals("5")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      mars.setPrice(value);
-    } else if (input.equals("6")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      ochip.setPrice(value);
-    } else if (input.equals("7")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      sneakers.setPrice(value);
-    } else if (input.equals("8")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-
-      sourWorms.setPrice(value);
-    } else if (input.equals("9")) {
-      System.out.println("How much do you want to set");
-      String input1 = scan.nextLine();
-      double value = Double.valueOf(input1.toString());
-      water.setPrice(value);
-
-    }
-
-
-
-  }
-
-  public void addVolume(){
-
-    Scanner sca = new Scanner(System.in);
-
-
-    System.out.println("which one do you want to add volume, type Code");
-    String input = sca.nextLine();
-    if (input.equals("1")) {
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("BBQChips")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("BBQChips");
-
-      vendingMachine.getStock().put("BBQChips", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("2")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Jellybeans")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Jellybeans");
-
-      vendingMachine.getStock().put("Jellybeans", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("3")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Juice")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Juice");
-
-      vendingMachine.getStock().put("Juice", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("4")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Lollies")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Lollies");
-
-      vendingMachine.getStock().put("Lollies", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("5")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Mars")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Mars");
-
-      vendingMachine.getStock().put("Mars", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("6")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("OriginalChips")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("OriginalChips");
-
-      vendingMachine.getStock().put("OriginalChips", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("7")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Sneakers")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Sneakers");
-
-      vendingMachine.getStock().put("Sneakers", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("8")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Sourworms")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Sourworms");
-
-      vendingMachine.getStock().put("Sourworms", value + add);
-      vendingMachine.PrintStock();
-    }else if(input.equals("9")){
-      System.out.println("How many do you want to add, you can only add " + (10 - vendingMachine
-          .getStock("Water")) + " items");
-      String input1 = sca.nextLine();
-      int value = Integer.parseInt(input1);
-
-      int add = vendingMachine.getStock("Water");
-
-      vendingMachine.getStock().put("Water", value + add);
-      vendingMachine.PrintStock();
-    }
-
-  }
-
-
   public void printTran(){
     Set<Integer> abc = tran.keySet();
     for (Integer bb : abc){
@@ -475,9 +214,6 @@ public class Menu {
       }
     }
   }
-
-
-
 
 
 }
