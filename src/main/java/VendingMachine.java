@@ -308,7 +308,6 @@ public class VendingMachine<purchaseList> {
 
     System.out.println("\nIf you are a staff, please type 11 ");
 
-    System.out.println("\nIf you want to see stock, please type 12 ");
   }
 
   public void PayMethod() {
